@@ -9,5 +9,8 @@ router
 router
     .route("/login")
     // .post
+    .get((req, res) => {
+        res.send("all users route works!")
+    })
 
 module.exports = router;

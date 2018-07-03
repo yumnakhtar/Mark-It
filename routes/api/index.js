@@ -6,9 +6,11 @@ const bookmark = require("./bookmark.js");
 //matches with "/api/user"
 router.route("/user")
     //CREATE: add new user to DB
-    .post()
+    // .post()
     //READ: get all users from DB
-    .get()
+    .get((req, res) => {
+        "all users route works!"
+    })
 
 //category routes
 router.route("/user/:id/category", category)

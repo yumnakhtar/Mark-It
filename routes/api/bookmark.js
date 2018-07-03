@@ -4,12 +4,14 @@ const router = require("express").Router();
 router
     .route("/")
     //CREATE: create new bookmark
-    .post()
+    // .post()
     //READ: get an existing bookmark
-    .get()
+    .get((req, res) => {
+        "matching bookmark route works!"
+    })
     //UPDATE: edit existing bookmark
-    .put()
+    // .put()
     //DELETE: remove existing bookmark
-    .delete()
+    // .delete()
 
 module.exports = router;

@@ -4,19 +4,23 @@ const router = require("express").Router();
 router
     .route("/")
     //CREATE: create new subcategory
-    .post()
+    // .post()
     //READ: get an existing subcategory
-    .get()
+    .get((req, res) => {
+        "subcat route works!"
+    })
     //UPDATE: edit existing subcategory
-    .put()
+    // .put()
     //DELETE: remove existing subcategory
-    .delete()
+    // .delete()
 
 // matches with "/api/user/:id/subcategory/:subcategoryId/bookmark"
 router
     .route("/:subcategoryId/bookmark")
     //READ: get all bookmarks from a subcategory
-    .get()
+    .get((req, res) => {
+        "all bookmarks route works!"
+    })
 
 
 module.exports = router;
