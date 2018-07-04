@@ -1,33 +1,27 @@
 const router = require("express").Router();
-
+const categoriesController = require("../../controllers/categoriesController");
 // matches with "api/user/:id/category"
 router
     .route("/")
     //CREATE: create new category
-    // .post()
+    .post(categoriesController.create)
     //READ: get an existing category
-    .get((req, res) => {
-        "matching category route works!"
-    })  
+    .get(categoriesController.findById)  
     //UPDATE: edit existing category
-    // .put()
+    .put(categoriesController.update)
     //DELETE: remove existing category
-    // .delete()
+    .delete(categoriesController.remove)
 
 // matches with "/api/user/:id/category/:categoryId/bookmark"
 router
     .route("/:categoryId/bookmark")
     //READ: get all bookmarks from a category
-    .get((req, res) => {
-        "all bookmark route works!"
-    })
+    .get(categoriesController.getBookmarks)
 
 // matches with "/api/user/:id/category/:categoryId/subcategory"
 router
     .route("/:categoryId/subcategory")
     //READ: get all subcategories of a category
-    .get((req, res) => {
-        "all subcats route works!"
-    })
+    .get(categoriesController.getSubcategories)
 
 module.exports = router;
