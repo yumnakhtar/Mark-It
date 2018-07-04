@@ -1,6 +1,11 @@
 // *** Dependencies
 const express = require("express");
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+
 const routes = require("./routes");
 
 // Sets up the Express App
