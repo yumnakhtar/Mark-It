@@ -1,11 +1,14 @@
-const db = require("../models");
+// const db = require("../models");
 
 
 module.exports= {
     create: function(req, res) {
-        db.Users
+        // db.Users
+        res.send("something")
     },
     findAll: function(req, res) {
-        db.Users
+        // db.Users
+        res.send("something")
+
     }
 }

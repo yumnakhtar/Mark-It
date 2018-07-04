@@ -2,13 +2,13 @@ const router = require("express").Router();
 const category = require("./category.js");
 const subcategory = require("./subcategory.js");
 const bookmark = require("./bookmark.js");
-const usersController = require("../../controllers/booksController");
+const usersController = require("../../controllers/bookmarksController");
 
-//matches with "/api/user"
-router
-    .route("/user")
-    .post(usersController.create)
-    .get(usersController.findAll)
+// //matches with "/api/user"
+// router
+//     .route("/user")
+//     .post(usersController.create)
+//     .get(usersController.findAll)
 
 //category routes
 router.use("/user/:id/category", category)
