@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const ApiRoutes = require("./api");
+const apiRoutes = require("./api");
 //API routes
 router
-    .use("/api", ApiRoutes);
+    .use("/api", apiRoutes);
 
 //check user auth
 router

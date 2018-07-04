@@ -2,16 +2,13 @@ const router = require("express").Router();
 const category = require("./category.js");
 const subcategory = require("./subcategory.js");
 const bookmark = require("./bookmark.js");
+const usersController = require("../../controllers/booksController");
 
 //matches with "/api/user"
 router
     .route("/user")
-    //CREATE: add new user to DB
-    // .post()
-    //READ: get all users from DB
-    .get((req, res) => {
-        res.send("all users route works!")
-    })
+    .post(usersController.create)
+    .get(usersController.findAll)
 
 //category routes
 router.use("/user/:id/category", category)
