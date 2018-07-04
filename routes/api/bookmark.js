@@ -7,7 +7,7 @@ router
     // .post()
     //READ: get an existing bookmark
     .get((req, res) => {
-        "matching bookmark route works!"
+        res.send("matching bookmark route works!")
     })
     //UPDATE: edit existing bookmark
     // .put()

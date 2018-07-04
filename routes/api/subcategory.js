@@ -7,7 +7,7 @@ router
     // .post()
     //READ: get an existing subcategory
     .get((req, res) => {
-        "subcat route works!"
+        res.send("subcat route works!")
     })
     //UPDATE: edit existing subcategory
     // .put()
@@ -19,7 +19,7 @@ router
     .route("/:subcategoryId/bookmark")
     //READ: get all bookmarks from a subcategory
     .get((req, res) => {
-        "all bookmarks route works!"
+        res.send("all bookmarks route works!")
     })
 
 

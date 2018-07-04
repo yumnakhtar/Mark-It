@@ -1,8 +1,8 @@
-const Router = require("express").Router();
+const router = require("express").Router();
 const ApiRoutes = require("./api");
 //API routes
 router
-    .route("/api", ApiRoutes);
+    .use("/api", ApiRoutes);
 
 //check user auth
 router
@@ -12,4 +12,4 @@ router
         res.send("all users route works!")
     })
 
-module.exports = Router;
+module.exports = router;
