@@ -1,10 +1,10 @@
 // *** Dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
-const passport = require("passport");
-const flash = require("connect-flash");
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
+// const passport = require("passport");
+// const flash = require("connect-flash");
+// const cookieParser = require("cookie-parser");
+// const session = require("express-session");
 
 const routes = require("./routes");
 
