@@ -1,0 +1,3 @@
+    DROP DATABASE IF EXISTS markIt;
+
+    CREATE DATABASE markIt;
