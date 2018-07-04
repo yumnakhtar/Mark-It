@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Bookmark = sequelize.define("Bookmark", {
+    var Bookmarks = sequelize.define("Bookmarks", {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -29,32 +29,23 @@ module.exports = function (sequelize, DataTypes) {
           len: [1, 200],
           notEmpty: true
         }
-      },
-      priority: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-          isInt: true,
-          max: 5,
-          min: 1
-        }
       }
     });
   
   
-    Bookmark.associate = function (models) {
+    Bookmarks.associate = function (models) {
       // A Bookmarks can't be created without an bucket due to the foreign key constraint
-      Bookmark.belongsTo(models.Category, {
+      Bookmarks.belongsTo(models.Categories, {
         foreignKey: {
           allowNull: false
         }
       }),
-      Bookmark.belongsTo(models.Subcategory, {
+      Bookmarks.belongsTo(models.Subcategories, {
         foreignKey: {
           allowNull: false
         }
       }),
-      Bookmark.belongsTo(models.User, {
+      Bookmarks.belongsTo(models.Users, {
         foreignKey: {
           allowNull: false
         }
@@ -62,5 +53,5 @@ module.exports = function (sequelize, DataTypes) {
     };
   
   
-    return Bookmark;
+    return Bookmarks;
   };

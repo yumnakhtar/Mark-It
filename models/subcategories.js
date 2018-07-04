@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Category = sequelize.define("Category", {
+    var Subcategories = sequelize.define("Subcategories", {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -16,21 +16,23 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
 
-  Category.associate = function(models) {
-    // When a Category is deleted, also delete any associated Bookmarks
-    Category.hasMany(models.Subcategory, {
-      onDelete: "cascade"
-    }),
-    Category.hasMany(models.Bookmark, {
+  Subcategories.associate = function(models) {
+    // When a Bucket is deleted, also delete any associated Bookmarks
+    Subcategories.hasMany(models.Bookmarks, {
         onDelete: "cascade"
     }),
-    Category.belongsTo(models.User, {
+    Subcategories.belongsTo(models.Users, {
       foreignKey: {
         allowNull: false
       }
+    }),
+    Subcategories.belongsTo(models.Categories, {
+        foreignKey: {
+          allowNull: false
+        }
     });
   };
 
-  return Category;
+  return Subcategories;
 };
   
