@@ -1,17 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Navbar from "./components/Navbar/"
-import Footer from "./components/Footer"
-import Login from "./pages/Login"
-// import LoginForm from "./components/LoginForm"
+import Login from './pages/Login';
 
 const App = () => (
-  <div>
-    <Navbar />
-    <Footer />
-    <Login />
-    
-  </div>
-)
+  
+ <Login />
+);
 
 export default App;
