@@ -91,7 +91,7 @@ class Login extends Component {
       .catch(err => console.log("err", err))
 
   }
-  renderTest() {
+  renderLoginForm() {
     if (this.state.isLoggedIn) {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
@@ -118,7 +118,7 @@ class Login extends Component {
 
   render() {
     return (
-      this.renderTest()
+      this.renderLoginForm()
     )
   }
 }
