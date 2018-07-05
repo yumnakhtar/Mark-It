@@ -3,8 +3,8 @@ import "./Footer.css";
 
 
 const Footer = () => (
-  <div class="card-footer text-muted">
-  2 days ago
+  <div className="card-footer text-muted">
+  	&#169; mark it
 </div>
 )
 
