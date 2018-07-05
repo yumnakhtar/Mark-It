@@ -5,7 +5,7 @@ router
     .route("/")
     //CREATE: create new bookmark
     .post(bookmarksController.create)
-    //READ: get an existing bookmark
+    //READ: get all existing bookmarks
     .get(bookmarksController.findById)
     //UPDATE: edit existing bookmark
     .put(bookmarksController.update)

@@ -8,12 +8,11 @@ module.exports= {
 
     },
     findById: function(req, res) {
+        console.log(req.query)
         db.Categories
-            .findById(req.params.id)
-            .then(dbModel => res.json(req))
+            .findAll(req.query)
+            .then((dbModel) => res.json(dbModel))
             .catch(err => res.status(422).json(err));
-        // res.send("something")
-
     },
     update: function(req,res) {
         // db.Categories

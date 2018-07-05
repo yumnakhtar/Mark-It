@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const categoriesController = require("../../controllers/categoriesController");
-// matches with "api/user/:id/category"
+// matches with "api/user/:id/category/"
 router
     .route("/")
     //CREATE: create new category

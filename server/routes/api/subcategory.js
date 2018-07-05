@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const subcategoriesController = require("../../controllers/subcategoriesController");
-// matches with "api/user/:id/subcategory"
+// matches with "api/user/:id/subcategory/"
 router
     .route("/")
     //CREATE: create new subcategory
     .post(subcategoriesController.create)
-    //READ: get an existing subcategory
+    //READ: get all existing subcategories
     .get(subcategoriesController.findById)
     //UPDATE: edit existing subcategory
     .put(subcategoriesController.update)
