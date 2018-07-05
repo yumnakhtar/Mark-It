@@ -1,4 +1,4 @@
-// const db = require("../models");
+const db = require("../models");
 
 
 module.exports= {
@@ -8,9 +8,14 @@ module.exports= {
 
     },
     findById: function(req, res) {
-        // db.subcategories
-        res.send("something")
-
+        db.Subcategories
+        .findAll({
+            where: {
+                UserId: req.params.id
+            }
+        })
+        .then((dbModel) => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
     update: function(req,res) {
         // db.subcategories
@@ -23,8 +28,15 @@ module.exports= {
 
     },
     getBookmarks: function(req, res) {
-        //which db to access?
-        res.send("something")
+        db.Bookmarks
+        .findAll({
+            where: {
+                UserId: req.params.id,
+                SubcategoryId: req.params.subcategoryId
+            }
+        })
+        .then((dbModel) => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
 
     }
 }

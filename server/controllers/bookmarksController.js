@@ -1,4 +1,4 @@
-// const db = require("../models");
+const db = require("../models");
 
 
 module.exports= {
@@ -8,8 +8,14 @@ module.exports= {
 
     },
     findById: function(req, res) {
-        // db.bookmarks
-        res.send("something")
+        db.Bookmarks
+        .findAll({
+            where: {
+                UserId: req.params.id
+            }
+        })
+        .then((dbModel) => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
 
     },
     update: function(req,res) {

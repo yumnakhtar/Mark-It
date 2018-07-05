@@ -4,13 +4,16 @@ const db = require("../models");
 module.exports= {
     create: function(req, res) {
         // db.Categories
-        res.send("something")
+        res.send(req.body)
 
     },
     findById: function(req, res) {
-        console.log(req.query)
         db.Categories
-            .findAll(req.query)
+            .findAll({
+                where: {
+                    UserId: req.params.id
+                }
+            })
             .then((dbModel) => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
@@ -25,14 +28,25 @@ module.exports= {
 
     },
     getBookmarks: function(req, res) {
-        //which db to access?
-        res.send("something")
-
+        db.Bookmarks
+            .findAll({
+                where: {
+                    UserId: req.params.id,
+                    CategoryId: req.params.categoryId
+                }
+            })
+            .then((dbModel) => res.json(dbModel))
+            .catch(err => res.status(422).json(err)); 
     },
     getSubcategories: function(req, res)  {
-        //re-evaluate categories relationships
-        //which db to acces?
-        res.send("something")
-
+        db.Subcategories
+        .findAll({
+            where: {
+                UserId: req.params.id,
+                CategoryId: req.params.categoryId
+            }
+        })
+        .then((dbModel) => res.json(dbModel))
+        .catch(err => res.status(422).json(err)); 
     }
 }

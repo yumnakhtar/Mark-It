@@ -4,13 +4,14 @@ const router = require("express").Router();
 // const bookmark = require("./bookmark.js");
 // const usersController = require("../../controllers/bookmarksController");
 const categoriesController = require("../../controllers/categoriesController");
+const subcategoriesController = require("../../controllers/subcategoriesController");
+const bookmarksController = require("../../controllers/bookmarksController");
 
 // //matches with "/api/user"
 // router
 //     .route("/user")
 //     .post(usersController.create)
 //     .get(usersController.findAll)
-
 
 //////////////category routes/////////////////
 // router.use("/user/:id/category", category)
@@ -19,31 +20,37 @@ router
     //CREATE: create new category
     .post(categoriesController.create)
     //READ: get all existing categories
-    //working
-    .get(categoriesController.findById)  
+    ////////////////working
+    .get(categoriesController.findById)
+    
+router
+    .route("/user/:id/category/:categoryId")
     //UPDATE: edit existing category
     .put(categoriesController.update)
     //DELETE: remove existing category
     .delete(categoriesController.remove)
 
 router
-    .route("/api/user/:id/category/:categoryId/bookmark")
+    .route("/user/:id/category/:categoryId/bookmark")
     //READ: get all bookmarks from a category
+    ////////////////working
     .get(categoriesController.getBookmarks)
 
 router
-    .route("/api/user/:id/category/:categoryId/subcategory")
+    .route("/user/:id/category/:categoryId/subcategory")
     //READ: get all subcategories of a category
+    ////////////////working
     .get(categoriesController.getSubcategories)
 
 //////////////subcategory routes//////////////
 // router.use("/user/:id/subcategory", subcategory)
 
 router
-    .route("api/user/:id/subcategory/")
+    .route("/user/:id/subcategory/")
     //CREATE: create new subcategory
     .post(subcategoriesController.create)
     //READ: get all existing subcategories
+    ////////////////working
     .get(subcategoriesController.findById)
     //UPDATE: edit existing subcategory
     .put(subcategoriesController.update)
@@ -51,8 +58,9 @@ router
     .delete(subcategoriesController.remove)
 
 router
-    .route("/api/user/:id/subcategory/:subcategoryId/bookmark")
+    .route("/user/:id/subcategory/:subcategoryId/bookmark")
     //READ: get all bookmarks from a subcategory
+    ////////////////working
     .get(subcategoriesController.getBookmarks)
 
 
@@ -61,10 +69,11 @@ router
 // router.use("/user/:id/bookmark", bookmark)
 
 router
-    .route("api/user/:id/bookmark/")
+    .route("/user/:id/bookmark/")
     //CREATE: create new bookmark
     .post(bookmarksController.create)
     //READ: get all existing bookmarks
+    ////////////////working
     .get(bookmarksController.findById)
     //UPDATE: edit existing bookmark
     .put(bookmarksController.update)
