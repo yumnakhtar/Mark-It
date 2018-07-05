@@ -2,7 +2,8 @@ USE markIt;
 
 
 
-INSERT INTO markIt.Users (name, email, password, createdAt, updatedAt) VALUES ("Yumna", "yumna@gmail.com", "password", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
+INSERT INTO markIt.Users (email, local_pw, createdAt, updatedAt) 
+VALUES "yumna@gmail.com", "password", "2018-01-01 01:00:00", "2018-01-01 01:00:00");
 
 
 INSERT INTO markIt.Categories (name, UserId, createdAt, updatedAt) 

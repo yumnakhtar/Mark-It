@@ -24,14 +24,14 @@ module.exports = function(passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function(uuid, done) {
-        db.User.findById(uuid).then(function(user) {
+        db.Users.findById(uuid).then(function(s) {
 
-	        if (user) {
+	        if (s) {
 
-	            done(null, user.get());
+	            done(null, s.get());
 
 	        } else {
-	           // console.log("user.errors", user.errors)
+	           // console.log("s.errors", user.errors)
 	            done(user.errors, null);
 
 	        }
@@ -52,15 +52,15 @@ passport.use('local-signup', new LocalStrategy({
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, local_pw, done) {
-        // console.log("%%%%%%%%%%%%%%%%%",req.body);
+        console.log("%%%%%%%%%%%%%%%%%",req.body);
         // asynchronous
         // User.findOne wont fire unless data is sent back
         process.nextTick(function() {
-        // console.log("test");
+        console.log("test");
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
 
-        db.User.findOne({
+        db.Users.findOne({
             where: {
             	email: email
             }
@@ -76,15 +76,15 @@ passport.use('local-signup', new LocalStrategy({
             	console.log('signupMessage', 'That email is already taken.');
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
             } else {
-                // console.log("creating");
+                console.log("creating");
                 // if there is no user with that email
                 // create the user
-                db.User.create({
+                db.Users.create({
 						    email: req.body.email,
-						    local_pw: db.User.generateHash(local_pw)
+						    local_pw: db.Users.generateHash(local_pw)
 
 						    }).then(function(dbUser) {
-						    	//console.log("created result: ", dbUser);
+						    	console.log("created result: ", dbUser);
 						      // send post back to render
 						      return done(null, dbUser);
 
@@ -114,7 +114,7 @@ passport.use('local-login', new LocalStrategy({
 
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
-        db.User.findOne({
+        db.Users.findOne({
             where: {
                 email: req.body.email
             }
