@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-// import { InputEmail, InputPassword, LoginBtn } from "../../components/LoginForm";
-// import { Col, Row, Container } from "../../components/Grid";
+import { Col, Row, Container } from "../../components/Grid";
 
 class Login extends Component {
   state = {
-    isLoggedIn : false
+    isLoggedIn: false
   }
 
   componentWillMount() {
@@ -59,7 +58,6 @@ class Login extends Component {
         method: 'POST',
         headers: {
           "Content-Type": "application/json; charset=utf-8"
-          // "origin": "http://localhost:3000"
         },
         body: JSON.stringify(user),
         credentials: 'include',
@@ -78,7 +76,7 @@ class Login extends Component {
   }
 
   handlelogout() {
-    fetch("http://localhost:8000/logout", {
+    fetch("http://localhost:3000/logout", {
       method: 'GET',
       credentials: 'include',
       mode: 'cors'
@@ -98,57 +96,32 @@ class Login extends Component {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
       return (
-        <form>
-          <input type="email" id="user-email" placeholder="your email" />
-          <input type="password" id="user-pw" placeholder="your password" />
-          <button onClick={this.handleLoginSubmit.bind(this)}>Signup</button>
-          <button onClick={this.handleLoginSubmit.bind(this)}>Signin</button>
-        </form>
+        <Container>
+          <form>
+            <div className="form-group">
+              <label>Email address</label>
+              <input type="email" className="form-control" id="user-email" placeholder="Enter email" />
+
+            </div>
+            <div className="form-group">
+              <label>Password</label>
+              <input type="password" className="form-control" id="user-pw" placeholder="Password" />
+            </div>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary">Signup</button>
+            &nbsp;
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary">Signin</button>
+          </form>
+        </Container>
       )
     }
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        {this.renderTest()}
-      </div>
-    );
+      this.renderTest()
+    )
   }
 }
 
 
-
-  export default Login;
-
-
-
-
-//   render() {
-//     return (
-//       <Container fluid>
-//         <Row>
-//           <Col size="md-12">
-
-//             <form>
-//               <InputEmail name="email" placeholder="Email (Required)" />
-//               <InputPassword name="password" placeholder="password (Required)" />
-//               <LoginBtn>Login </LoginBtn>
-//             </form>
-//           </Col>
-
-//         </Row>
-//       </Container>
-//     );
-//   }
-// }
-
-
-// export default Login;
+export default Login;
