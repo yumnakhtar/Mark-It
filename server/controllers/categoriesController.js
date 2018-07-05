@@ -3,22 +3,50 @@ const db = require("../models");
 
 module.exports= {
     create: function(req, res) {
-        db.categories
+        // db.Categories
+        res.send(req.body)
+
     },
     findById: function(req, res) {
-        db.categories
+        db.Categories
+            .findAll({
+                where: {
+                    UserId: req.params.id
+                }
+            })
+            .then((dbModel) => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
     update: function(req,res) {
-        db.categories
+        // db.Categories
+        res.send("something")
+
     },
     remove: function(req,res) {
-        db.categories
+        // db.Categories
+        res.send("something")
+
     },
     getBookmarks: function(req, res) {
-        //which db to access?
+        db.Bookmarks
+            .findAll({
+                where: {
+                    UserId: req.params.id,
+                    CategoryId: req.params.categoryId
+                }
+            })
+            .then((dbModel) => res.json(dbModel))
+            .catch(err => res.status(422).json(err)); 
     },
     getSubcategories: function(req, res)  {
-        //re-evaluate categories relationships
-        //which db to acces?
+        db.Subcategories
+        .findAll({
+            where: {
+                UserId: req.params.id,
+                CategoryId: req.params.categoryId
+            }
+        })
+        .then((dbModel) => res.json(dbModel))
+        .catch(err => res.status(422).json(err)); 
     }
 }

@@ -64,12 +64,9 @@ app.use(flash());
 
 app.use(routes);
 
-
-
-// Launch Server ==============================================
-
-db.sequelize.sync().then(function(){
-    app.listen(PORT, function(){
-        console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-    })
-})
+// Start the API server
+  db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+      console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+    });
+  });
