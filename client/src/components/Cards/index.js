@@ -1,1 +1,1 @@
-import Cards from "./Card"
+export { default } from      "./CardBody"

@@ -6,6 +6,7 @@ const Navbar = () => (
      MarkIt
     </a>
   </nav>
+  
 )
 
 
