@@ -7,17 +7,12 @@ const categoriesController = require("../../controllers/categoriesController");
 const subcategoriesController = require("../../controllers/subcategoriesController");
 const bookmarksController = require("../../controllers/bookmarksController");
 
-// //matches with "/api/user"
-// router
-//     .route("/user")
-//     .post(usersController.create)
-//     .get(usersController.findAll)
+
 
 //////////////category routes/////////////////
-// router.use("/user/:id/category", category)
 router
     .route("/user/:id/category/")
-    //CREATE: create new category
+    ////////////////working
     .post(categoriesController.create)
     //READ: get all existing categories
     ////////////////working
@@ -28,6 +23,7 @@ router
     //UPDATE: edit existing category
     .put(categoriesController.update)
     //DELETE: remove existing category
+    ///////////////working
     .delete(categoriesController.remove)
 
 router
@@ -48,13 +44,18 @@ router
 router
     .route("/user/:id/subcategory/")
     //CREATE: create new subcategory
+    ////////////////working
     .post(subcategoriesController.create)
     //READ: get all existing subcategories
     ////////////////working
     .get(subcategoriesController.findById)
+
+router
+    .route("/user/:id/subcategory/:subcategoryId")
     //UPDATE: edit existing subcategory
     .put(subcategoriesController.update)
     //DELETE: remove existing subcategory
+    ///////////////working
     .delete(subcategoriesController.remove)
 
 router
@@ -71,13 +72,18 @@ router
 router
     .route("/user/:id/bookmark/")
     //CREATE: create new bookmark
+    ///////////////working
     .post(bookmarksController.create)
     //READ: get all existing bookmarks
     ////////////////working
     .get(bookmarksController.findById)
+
+router
+    .route("/user/:id/bookmark/:bookmarkId")
     //UPDATE: edit existing bookmark
     .put(bookmarksController.update)
     //DELETE: remove existing bookmark
+    ///////////////working
     .delete(bookmarksController.remove)
 
 module.exports = router;
