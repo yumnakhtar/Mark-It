@@ -1,52 +1,60 @@
 const db = require("../models");
 
 
-module.exports= {
-    create: function(req, res) {
-        // db.Categories
-        res.send(req.body)
+module.exports = {
+    create: (req, res) => {
+        db.Categories
+            .create(req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+
 
     },
-    findById: function(req, res) {
+    findById: function (req, res) {
         db.Categories
             .findAll({
                 where: {
-                    UserId: req.params.id
+                    UserUuid: req.params.id
                 }
             })
             .then((dbModel) => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    update: function(req,res) {
+    update: function (req, res) {
         // db.Categories
-        res.send("something")
 
     },
-    remove: function(req,res) {
-        // db.Categories
-        res.send("something")
-
+    remove: function (req, res) {
+        db.Categories
+            .destroy({ 
+                where: {
+                    name: req.body.name,
+                    UserUuid: req.body.UserUuid
+                }
+             })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
-    getBookmarks: function(req, res) {
+    getBookmarks: function (req, res) {
         db.Bookmarks
             .findAll({
                 where: {
-                    UserId: req.params.id,
+                    UserUuid: req.params.id,
                     CategoryId: req.params.categoryId
                 }
             })
             .then((dbModel) => res.json(dbModel))
-            .catch(err => res.status(422).json(err)); 
+            .catch(err => res.status(422).json(err));
     },
-    getSubcategories: function(req, res)  {
+    getSubcategories: function (req, res) {
         db.Subcategories
-        .findAll({
-            where: {
-                UserId: req.params.id,
-                CategoryId: req.params.categoryId
-            }
-        })
-        .then((dbModel) => res.json(dbModel))
-        .catch(err => res.status(422).json(err)); 
+            .findAll({
+                where: {
+                    UserUuid: req.params.id,
+                    CategoryId: req.params.categoryId
+                }
+            })
+            .then((dbModel) => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     }
 }
