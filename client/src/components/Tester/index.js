@@ -1,2 +1,1 @@
-// export * from "./Test"
-export { default } from "./Test"
+export { default } from "./Tester"

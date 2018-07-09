@@ -3,15 +3,17 @@ const db = require("../models");
 
 module.exports= {
     create: function(req, res) {
-        // db.bookmarks
-        res.send("something")
+        db.bookmarks
+        .create(req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
 
     },
     findById: function(req, res) {
         db.Bookmarks
         .findAll({
             where: {
-                UserId: req.params.id
+                UserUuid: req.params.id
             }
         })
         .then((dbModel) => res.json(dbModel))
@@ -24,8 +26,14 @@ module.exports= {
 
     },
     remove: function(req,res) {
-        // db.bookmarks
-        res.send("something")
-
+        db.bookmarks
+            .destroy({ 
+                where: {
+                    name: req.body.name,
+                    UserUuid: req.body.UserUuid
+                }
+             })
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
     }
 }
