@@ -8,7 +8,7 @@ class Sidebar extends Component {
 
     render() {
         return (
-            <div class="sidenav">
+            <div className="sidenav">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#clients">Clients</a>
@@ -18,6 +18,7 @@ class Sidebar extends Component {
     }
 }
 
+<<<<<<< HEAD:client/src/pages/Sidebar/Sidebar.js
 
 // const Footer = () => (
 //     <div class="sidenav">
@@ -29,4 +30,6 @@ class Sidebar extends Component {
 // )
 
 
+=======
+>>>>>>> 1621242bc6f1201cf3fb317eb11693ddcc0c25ef:client/src/components/Sidebar/Sidebar.js
 export default Sidebar;
