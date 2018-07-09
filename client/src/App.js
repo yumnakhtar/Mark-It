@@ -13,7 +13,7 @@ import Homepage from './pages/Homepage';
 const App = () => (
   <Router>
   <div>
-    <Navbar />
+    {/* <Navbar /> */}
     <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/login" component={Login} />
