@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Image } from "react";
 import { Col, Row, Container } from "../../components/Grid";
+
 
 class Login extends Component {
   state = {
@@ -92,6 +93,7 @@ class Login extends Component {
 
   }
   renderLoginForm() {
+    document.body.style.background = `url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-0.3.5&s=c42f57ee27eaef62a8b49335d1f13ab5&auto=format&fit=crop&w=1500&q=80") no-repeat`;
     if (this.state.isLoggedIn) {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
@@ -117,7 +119,9 @@ class Login extends Component {
   }
 
   render() {
+    
     return (
+      
       this.renderLoginForm()
     )
   }
