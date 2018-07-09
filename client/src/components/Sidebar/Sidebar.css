@@ -3,6 +3,7 @@ body {
 }
 
 .sidenav {
+    margin-top: 4%;
     height: 100%;
     width: 160px;
     position: fixed;
