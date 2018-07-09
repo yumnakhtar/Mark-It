@@ -3,15 +3,16 @@ const db = require("../models");
 
 module.exports= {
     create: function(req, res) {
-        // db.subcategories
-        res.send("something")
-
+        db.subcategories
+        .create(req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
         db.Subcategories
         .findAll({
             where: {
-                UserId: req.params.id
+                UserUuid: req.params.id
             }
         })
         .then((dbModel) => res.json(dbModel))
@@ -23,15 +24,21 @@ module.exports= {
 
     },
     remove: function(req,res) {
-        // db.subcategories
-        res.send("something")
-
+        db.subcategories
+        .destroy({ 
+            where: {
+                name: req.body.name,
+                UserUuid: req.body.UserUuid
+            }
+         })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
     getBookmarks: function(req, res) {
         db.Bookmarks
         .findAll({
             where: {
-                UserId: req.params.id,
+                UserUuid: req.params.id,
                 SubcategoryId: req.params.subcategoryId
             }
         })
