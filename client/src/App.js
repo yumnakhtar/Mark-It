@@ -9,13 +9,13 @@ import Test from './pages/Test';
 const App = () => (
   <Router>
   <div>
-    <Navbar />
+    {/* <Navbar /> */}
     <Switch>
         <Route exact path="/homepage" component={Test} />
         <Route exact path="/login" component={Login} />
         {/* <Route component={NoMatch} /> */}
       </Switch>
-    <Footer />
+    {/* <Footer /> */}
   </div>
   </Router>
 );
