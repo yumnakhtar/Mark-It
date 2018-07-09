@@ -4,7 +4,8 @@ import "./Footer.css";
 
 const Footer = () => (
   <div className="card-footer text-muted">
-  	&#169; mark it
+  	{/* &#169; mark it */}
+    <h5>  	&#169; Mark it</h5>
 </div>
 )
 

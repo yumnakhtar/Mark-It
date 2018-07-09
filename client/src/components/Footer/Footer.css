@@ -1,6 +1,12 @@
 .card-footer{
     text-align: center;
     position: fixed;
+    color: aliceblue;
     bottom: 0px;
-    width: 100%
+    width: 100%;
+    background-color: #007bff;
+}
+
+h5{
+    color: aliceblue;
 }

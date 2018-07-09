@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Test from './pages/Test';
+import ErrorPage from "./pages/ErrorPage"
 
 const App = () => (
   <Router>
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path="/login" component={Login} />
         {/* <Route component={NoMatch} /> */}
       </Switch>
+      <ErrorPage />
     <Footer />
   </div>
   </Router>
