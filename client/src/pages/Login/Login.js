@@ -100,19 +100,19 @@ class Login extends Component {
     } else {
       return (
         <Container>
-          <form>
-            <div className="form-group">
-              <label>Email address:</label>
+          <form className="login__form-group">
+            <div className="form-group" id="emailinpt">
+              <label  className="login__form-label">Email :</label>
               <input type="email"  id="user-email" />
 
             </div>
-            <div className="form-group">
-              <label>Password:    </label>
-              <input type="password"  id="user-pw" />
+            <div className="form-group login__form-group" id="passwordinpt">
+              <label className="login login__form-label">Password :    </label>
+              <input type="password"  id="user-pw"  />
             </div>
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Sign up</button>
             &nbsp;
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Signin</button>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Sign in</button>
           </form>
         </Container>
       )
