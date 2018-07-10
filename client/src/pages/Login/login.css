@@ -36,3 +36,12 @@ input {
     transform: translate(-50%, 0%)
 
 }
+
+.login-wrapper {
+    background-image: url("./canva-photo-editor.png");
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+

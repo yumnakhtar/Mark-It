@@ -1,6 +1,8 @@
-import React, { Component, Image } from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import React, {Component} from "react";
+import {Container } from "../../components/Grid";
 import "./login.css";
+import bg_img from './canva-photo-editor.png';
+
 
 
 class Login extends Component {
@@ -94,11 +96,12 @@ class Login extends Component {
 
   }
   renderLoginForm() {
-    document.body.style.background = `url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-0.3.5&s=c42f57ee27eaef62a8b49335d1f13ab5&auto=format&fit=crop&w=1500&q=80") no-repeat`;
+    document.body.style.background = `url(${bg_img}) no-repeat`;
     if (this.state.isLoggedIn) {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
       return (
+        // <div className="login-wrapper">
         <Container>
           <form className="login__form-group">
             <div className="form-group" id="emailinpt">
@@ -115,6 +118,7 @@ class Login extends Component {
             <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Sign in</button>
           </form>
         </Container>
+        // </div>
       )
     }
   }

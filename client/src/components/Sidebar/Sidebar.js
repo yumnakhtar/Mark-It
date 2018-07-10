@@ -1,20 +1,34 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
+import API from "../../utils/API";
+
 
 class Sidebar extends Component {
     state = {
-
+        categories: []
     };
+
+    componentDidMount() {
+        this.loadCategories();
+    };
+
+    loadCategories = () => {
+        API.getCategories().then(res => {
+            this.setState({ categories: res.data })
+        }
+        ).catch(error => {
+            console.log("ERROR", error);
+        })
+    }
 
     render() {
         return (
             <div className="sidenav">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#clients">Clients</a>
-                <a href="#contact">Contact</a>
+                {this.state.categories.map(category =>
+                    { return <h1>{category.name} </h1>}
+                )}
             </div>
-        );
+        )
     }
 }
 
