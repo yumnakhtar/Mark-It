@@ -1,5 +1,6 @@
 import React, { Component, Image } from "react";
 import { Col, Row, Container } from "../../components/Grid";
+import "./login.css";
 
 
 class Login extends Component {
@@ -101,17 +102,17 @@ class Login extends Component {
         <Container>
           <form>
             <div className="form-group">
-              <label>Email address</label>
-              <input type="email" className="form-control" id="user-email" placeholder="Enter email" />
+              <label>Email address:</label>
+              <input type="email"  id="user-email" />
 
             </div>
             <div className="form-group">
-              <label>Password</label>
-              <input type="password" className="form-control" id="user-pw" placeholder="Password" />
+              <label>Password:    </label>
+              <input type="password"  id="user-pw" />
             </div>
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary">Signup</button>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
             &nbsp;
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary">Signin</button>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Signin</button>
           </form>
         </Container>
       )
