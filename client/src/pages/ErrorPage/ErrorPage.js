@@ -12,12 +12,9 @@ class ErrorPage extends Component {
         return (
             <div>
                 <div className="error">
-                    {/* <div class="errorbtn">
-                    <a href="#" class="btn btn-primary">Go Home</a>
-                    </div> */}
                 </div>
                 <div className="errorbtn">
-                    <a href="#" className="btn btn-primary">Go Home</a>
+                    <a href="/" className="btn btn-primary">Go Home</a>
                 </div>
            </div>
         );
