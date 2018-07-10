@@ -5,7 +5,7 @@
 
 MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt is an app that basically organizes and save your Bookmarks into different categories and subcategories for easy access and quick remebery of saved links. 
 
-## Built Withbu 🏗 🏛
+## Built With 🏗 🏛
 * HTML5 & CSS3
 * [Bootstrap](https://getbootstrap.com/) - CSS framework
 * [Javascript](https://www.javascript.com/) - programming language
