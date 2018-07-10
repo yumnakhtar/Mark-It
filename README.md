@@ -21,7 +21,7 @@ MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt
 * [Axios](https://www.npmjs.com/package/axios)
 * [react-dom](https://www.npmjs.com/package/react-dom)
 
-### ### NPM Packages [ Server ] 💻💾🖥
+### NPM Packages [ Server ] 💻💾🖥
 * [Axios](https://www.npmjs.com/package/axios)
 * [Passport](http://www.passportjs.org/docs/facebook/)
 * [mySQL](https://www.npmjs.com/package/mysql)
