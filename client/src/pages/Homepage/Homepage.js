@@ -13,8 +13,10 @@ class Homepage extends Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 <Sidebar />
                 <Card />
+                
         </div>
         )
     }
