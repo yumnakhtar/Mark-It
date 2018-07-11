@@ -38,7 +38,7 @@ input {
 }
 
 .login-wrapper {
-    background-image: url("./canva-photo-editor.png");
+    /* background-image: url("./canva-photo-editor.png"); */
     position: absolute;
     background-repeat: no-repeat;
     height: 100%;
