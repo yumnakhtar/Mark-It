@@ -37,16 +37,16 @@ class testing extends Component {
             <div>
                 <Tester
                 /////this code creates a new category/////
-                    // value={this.state.categoryName}
-                    // handleChange={this.handleChange.bind(this)}
-                    // name="categoryName"
-                    // handleSubmit={this.handleSubmit}
-
-                /////this code deletes a category
                     value={this.state.categoryName}
                     handleChange={this.handleChange.bind(this)}
                     name="categoryName"
-                    handleDelete={this.handleDelete}
+                    handleSubmit={this.handleSubmit}
+
+                /////this code deletes a category
+                    // value={this.state.categoryName}
+                    // handleChange={this.handleChange.bind(this)}
+                    // name="categoryName"
+                    // handleDelete={this.handleDelete}
                 />
             </div>
 
