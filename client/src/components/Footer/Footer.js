@@ -3,7 +3,7 @@ import "./Footer.css";
 
 
 const Footer = () => (  
-<div class="jumbotron jumbotron-fluid">
+<div className="jumbotron jumbotron-fluid">
   &#169; mark it
 </div>
 
