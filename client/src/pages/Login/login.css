@@ -1,0 +1,14 @@
+.sign-up, .sign-in {
+    margin-left: 80px;
+}
+
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    float: right;
+    margin-right: 130px;
+
+}

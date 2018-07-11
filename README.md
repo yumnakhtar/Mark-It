@@ -5,7 +5,7 @@
 
 MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt is an app that basically organizes and save your Bookmarks into different categories and subcategories for easy access and quick remebery of saved links. 
 
-## Built With :crescent_moon:
+## Built With 🏗 🏛
 * HTML5 & CSS3
 * [Bootstrap](https://getbootstrap.com/) - CSS framework
 * [Javascript](https://www.javascript.com/) - programming language
@@ -13,11 +13,27 @@ MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt
 * [Express.js](https://expressjs.com/) - routing framework
 * [Jquery](https://jquery.com/) - Making ajaxs calls 
 
-### NPM Packages :blush:
+### NPM Packages [ Client ]: 📦🎁
 * [Express](https://www.npmjs.com/package/express)
 * [body-parser](https://www.npmjs.com/package/body-parser)
 * [mySQL](https://www.npmjs.com/package/mysql)
 * [Passport](http://www.passportjs.org/docs/facebook/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [react-dom](https://www.npmjs.com/package/react-dom)
+
+### NPM Packages [ Server ] 💻💾🖥
+* [Axios](https://www.npmjs.com/package/axios)
+* [Passport](http://www.passportjs.org/docs/facebook/)
+* [mySQL](https://www.npmjs.com/package/mysql)
+* [body-parser](https://www.npmjs.com/package/body-parser)
+* [Express](https://www.npmjs.com/package/express)
+* [ Morgan ](https://www.npmjs.com/package/morgan)
+* [ Express Session ](https://www.npmjs.com/package/express-session)
+* [ Sequelize ](https://www.npmjs.com/package/sequelize)
+
+
+
+
 
 ## Site and Code Links :link:
 
@@ -26,9 +42,9 @@ MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt
 
 
 ## Author :key: 
-* **Lesley Banadzem** [lealeyfon](https://github.com/lealeyfon)
-* **Niyati Shah** - [niyati15](https://github.com/niyati15)
-* **Yumna Akhtar** - [yumnakhtar](https://github.com/yumnakhtar)
+* **[Lesley Banadzem](https://github.com/lealeyfon)** 
+* **[Niyati Shah](https://github.com/niyati15)** 
+* **[Yumna Akhtar](https://github.com/yumnakhtar)** 
 
 ## Routes 🔥💣
  ### screensahoot of the routes
@@ -45,4 +61,4 @@ We chose to keep the models for the app simple for now: each user has many Bucke
 
 
 ## Acknowledgments :pray:
-A huge and immerse thank you to our instructor, [Jerome](https://www.linkedin.com/in/jeromechenette/), [Danny](https://www.linkedin.com/in/droxey/), and [Micheal](https://www.linkedin.com/in/mkleincreative/) and the TAs, [Amber](https://www.linkedin.com/in/amber-burroughs-29a69467/), [Ricky](https://www.linkedin.com/in/rickyfeng/), and [Sasha](https://www.linkedin.com/in/sasha-patsel-064aab132/)!!  :grimacing: 
+A huge and immerse thank you to our instructor, [Jerome](https://www.linkedin.com/in/jeromechenette/), [Danny](https://www.linkedin.com/in/droxey/), and [Micheal](https://www.linkedin.com/in/mkleincreative/) and the TAs, [Amber](https://www.linkedin.com/in/amber-burroughs-29a69467/), [Ricky](https://www.linkedin.com/in/rickyfeng/), and [Sasha](https://www.linkedin.com/in/sasha-patsel-064aab132/)!!   👯‍♂️👯‍♀️

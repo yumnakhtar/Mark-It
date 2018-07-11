@@ -6,7 +6,7 @@ export default {
       return axios.get("/api/user/" + category.userId + "/category/");
   },
   saveCategory: category => {
-    fetch("http://localhost:8000/api/user/" + category.userId + "/category/", {
+    fetch("/api/user/" + category.userId + "/category/", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -26,7 +26,7 @@ export default {
     //   return axios.delete("api/user/" + category.userId + "/", category)
     console.log(category.UserUuid)
     console.log(category.name)
-    fetch("http://localhost:8000/api/user/" + category.UserUuid + "/category/" + category.name, {
+    fetch("/api/user/" + category.UserUuid + "/category/" + category.name, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -45,8 +45,4 @@ export default {
   editCategory: function(category) {
       return axios.put("api/user/" + category.userId + "/", category)
   }
-
-
-
-
 };
