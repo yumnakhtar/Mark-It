@@ -9,14 +9,12 @@ class Homepage extends Component {
     state = {
 
     }
-
     render() {
         return (
             <div>
                 <Navbar/>
                 <Sidebar />
                 <Card />
-                
         </div>
         )
     }

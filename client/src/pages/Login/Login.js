@@ -1,8 +1,7 @@
-import React, {Component} from "react";
-import {Container } from "../../components/Grid";
+import React, { Component } from "react";
+import { Container } from "../../components/Grid";
 import "./login.css";
-import bg_img from './canva-photo-editor.png';
-
+// import bg_img from './canva-photo-editor.png';
 
 
 class Login extends Component {
@@ -15,7 +14,7 @@ class Login extends Component {
   }
 
   checkAuth() {
-    fetch("http://localhost:8000/user", {
+    fetch("/user", {
       method: 'GET',
       credentials: 'include',
       mode: 'cors'
@@ -38,7 +37,8 @@ class Login extends Component {
       local_pw: document.getElementById("user-pw").value
     }
     if (selectedButton === "Signup") {
-      fetch("http://localhost:8000/signup", {
+      console.log("inside signup");
+      fetch("/signup", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json; charset=utf-8",
@@ -52,13 +52,16 @@ class Login extends Component {
         .then(json => {
           console.log("signup", json);
           console.log(json);
+
           this.setState({
             isLoggedIn: json
           })
+          window.location.href = "/";
+
         })
         .catch(err => console.log("err", err));
     } else if (selectedButton === "Signin") {
-      fetch("http://localhost:8000/signin", {
+      fetch("/signin", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json; charset=utf-8"
@@ -69,18 +72,20 @@ class Login extends Component {
       })
         .then(data => { return data.json() })
         .then(json => {
+          return 
           console.log("signin", json);
           console.log(json);
           this.setState({
             isLoggedIn: json
           })
+          window.location.href = "/";
         })
         .catch(err => console.log("err", err));
     }
   }
 
   handlelogout() {
-    fetch("http://localhost:3000/logout", {
+    fetch("/logout", {
       method: 'GET',
       credentials: 'include',
       mode: 'cors'
@@ -96,7 +101,7 @@ class Login extends Component {
 
   }
   renderLoginForm() {
-    document.body.style.background = `url(${bg_img}) no-repeat`;
+    // document.body.style.background = `url(${bg_img}) no-repeat`;
     if (this.state.isLoggedIn) {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
@@ -105,17 +110,17 @@ class Login extends Component {
         <Container>
           <form className="login__form-group">
             <div className="form-group" id="emailinpt">
-              <label  className="login__form-label">Email :</label>
-              <input type="email"  id="user-email" />
+              <label className="login__form-label">Email :</label>
+              <input type="email" id="user-email" />
 
             </div>
             <div className="form-group login__form-group" id="passwordinpt">
               <label className="login login__form-label">Password :    </label>
-              <input type="password"  id="user-pw"  />
+              <input type="password" id="user-pw" />
             </div>
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Sign up</button>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
             &nbsp;
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Sign in</button>
+            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Signin</button>
           </form>
         </Container>
         // </div>
@@ -124,9 +129,7 @@ class Login extends Component {
   }
 
   render() {
-    
     return (
-      
       this.renderLoginForm()
     )
   }
