@@ -15,9 +15,9 @@ export default {
         mode: 'cors'
     })
         .then(data => { return data })
-        .then(json => {
-            (json)
-        })
+        // .then(json => {
+        //     (json)
+        // })
         .catch(error => {
             console.log("ERROR", error);
         });
@@ -35,9 +35,9 @@ export default {
         mode: 'cors'
     })
         .then(data => { return data })
-        .then(json => {
-            (json)
-        })
+        // .then(json => {
+        //     (json)
+        // })
         .catch(error => {
             console.log("ERROR", error);
         });
