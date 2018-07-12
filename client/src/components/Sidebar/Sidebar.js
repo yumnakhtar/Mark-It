@@ -70,12 +70,18 @@ class Sidebar extends Component {
 		this.setState({ content_add: "add +" });
     }
 
+    handleClick = (event) => {
+        event.preventDefault();
+        alert("click works");
+    }
+
+
     render() {
         return (
             <div className="sidenav">
                 {this.state.categories.map(category => { 
                     return  <div> 
-                                <h1 value={category.id}>{category.name} </h1>
+                                <a href="#" value={category.id} onClick={this.handleClick}>{category.name} </a>
                             </div>
                 })}
                 

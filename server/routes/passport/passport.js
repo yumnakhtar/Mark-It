@@ -4,7 +4,6 @@ const passport = require('passport');
 
 router.get('/user',  (req, res) => {
     if(req.isAuthenticated()){
-      console.log("hi there! I am from the routes.");
       res.json(true)
     }
     else {
@@ -18,7 +17,6 @@ router.get('/user',  (req, res) => {
 // =====================================
 
 router.get('/logout', (req, res) => {
-  console.log("hi there! I am from the routes.");
     //req.logout();
      req.session.destroy(err => {
       req.logout();
@@ -35,7 +33,6 @@ router.get('/logout', (req, res) => {
 
 // process the login form
 router.post('/signin', (req, res, next) => {
-  console.log("hi there! I am from the routes.");
   passportAuthenticate('local-login', req, res, next);
 });
 
@@ -45,7 +42,6 @@ router.post('/signin', (req, res, next) => {
 
 // process the signup form
 router.post('/signup', (req, res, next) => {
-  console.log("hi there! I am from the routes.");
   passportAuthenticate('local-signup', req, res, next);
 });
 
@@ -81,7 +77,9 @@ passportAuthenticate = (localStrategy, req, res, next) => {
         console.log(req.session.passport.user);
         console.log("##########################");
         console.log("\n")
+        console.log('uuid', user.uuid );
 
+        res.cookie('user_uuid', user.uuid );
         res.cookie('user_email', user.email );
         res.cookie('authenticated', "true" );
 

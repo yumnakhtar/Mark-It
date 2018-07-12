@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   // Gets all categories
   getCategories: () => {
+      console.log("document.cookie: ",document.cookie);
       return axios.get("/api/user/6e91a560-80a8-11e8-a8aa-71792012fa45/category/");
   },
   saveCategory: category => {
