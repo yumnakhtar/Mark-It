@@ -2,9 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all categories
-  getCategories: () => {
-      console.log("document.cookie: ",document.cookie);
-      return axios.get("/api/user/099bd650-8600-11e8-bc00-13a4fbee32c3/category/");
+  getCategories: category => {
+      return axios.get("/api/user/" + category.UserUuid +"/category/");
   },
   saveCategory: category => {
     fetch("/api/user/" + category.userId + "/category/", {

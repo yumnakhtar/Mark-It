@@ -8,20 +8,24 @@ import API from "../../utils/API";
 
 class Homepage extends Component {
     state = {
-        userId: "099bd650-8600-11e8-bc00-13a4fbee32c3",
-        categoryID: ""
+        categoryID: "",
+        cookieValue: document.cookie.replace(/(?:(?:^|.*;\s*)user_uuid\s*\=\s*([^;]*).*$)|^.*$/, "$1")
     }
 
-    // handleClick = () => {
-    //     alert("click works");
-    // }
+
+    handleClick = () => {
+        console.log(this.state.cookieValue)
+    }
 
     render() {
+        let currUser = this.state.cookieValue;
         return (
             <div>
+                
                 <Navbar/>
                 <Sidebar 
-                    // handleClick={this.handleClick.bind(this)}
+                    currUser= {currUser}
+                    handleClick={this.handleClick.bind(this)}
                 >
                 </Sidebar>
                 <Card />

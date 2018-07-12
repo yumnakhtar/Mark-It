@@ -12,7 +12,6 @@ class Sidebar extends Component {
         this.handleBlur = this.handleBlur.bind(this);	
         this.handleClick = this.handleClick.bind(this);		
         this.state = {
-            userId: "6e91a560-80a8-11e8-a8aa-71792012fa45",
             content_add: "add +",
 			width: 100,
             categories: []
@@ -25,7 +24,11 @@ class Sidebar extends Component {
 
     //grabs all categories from API
     loadCategories = () => {
-        API.getCategories().then(res => {
+        var category = {
+            UserUuid: this.props.currUser,
+            name: this.state.content_add
+        }
+        API.getCategories(category).then(res => {
             this.setState({ categories: res.data })
             console.log(this.state.categories)
         }
@@ -37,6 +40,7 @@ class Sidebar extends Component {
     //when you click on the input box, it clears the space in order in enter user value
     handleFocus(event) {
         console.log('handleFocus:', event)
+        console.log(this.props.currUser)
 		this.setState({ content_add: "" });
 	}
     
@@ -51,7 +55,7 @@ class Sidebar extends Component {
 	handleKeypress(event) {
 		if (event.key === "Enter") {
             var category = {
-                UserUuid: this.state.userId,
+                UserUuid: this.props.currUser,
                 name: this.state.content_add
             }
             API.saveCategory(category);
@@ -71,21 +75,14 @@ class Sidebar extends Component {
 		this.setState({ content_add: "add +" });
     }
 
-    handleClick = (event) => {
-        // event.preventDefault();
-        // alert("click works");
-        console.log("click test")
-    }
-
-
     render() {
         return (
             <div className="sidenav">
-                {this.state.categories.map(category => (
-                      <div> 
-                        <a href="#" className="categories-display" value={category.id} onClick={this.handleClick}>{category.name} </a>
-                     </div>
-                ))}
+                {this.state.categories.map(category => { 
+                    return  <div> 
+                                <a href="#"value={category.id} onClick={this.props.handleClick}>{category.name} </a>
+                            </div>
+                })}
                 
                 <input
 					id="add"
