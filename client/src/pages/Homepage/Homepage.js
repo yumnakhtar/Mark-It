@@ -4,7 +4,7 @@ import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 // import Footer from "../../components/Footer";
 import Card from "../../components/Card";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 class Homepage extends Component {
     state = {

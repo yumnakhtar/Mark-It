@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container } from "../../components/Grid";
 import "./login.css";
 import bg_img from './abstract.jpg';
 import logo from './logo.png';

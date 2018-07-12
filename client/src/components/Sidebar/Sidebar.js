@@ -79,7 +79,8 @@ class Sidebar extends Component {
             <div className="sidenav">
                 {this.state.categories.map(category => { 
                     return  <div> 
-                                <a href="#"value={category.id} onClick={this.props.handleClick}>{category.name} </a>
+                                <a href="#"value={category.id}
+                                onClick={this.props.handleClick}>{category.name} </a>
                             </div>
                 })}
                 
