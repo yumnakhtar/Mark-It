@@ -1,47 +1,16 @@
-
-.login__form-group {
-    width: 450px;
-    position: relative;
+form{
+    display: block;
+    margin-top: 20%;
+    margin-left: 30%;
 }
-
-.login__form-label {
-    position: relative;
-    top: 9px;
-    margin-right: 10px;
+.abstract{
+    height: 145%;
+    /* width: 100%; */
 }
-
-.sign-up {
-    margin-left: 70px;
-    background-color: #808080;
-    border-radius: 100px;
-    border-color: #808080
+input{
+    width: 400px;
 }
-.sign-in {
-    margin-left: 30px;
-    background-color: #808080;
-    border-radius: 100px;
-    border-color: #808080
-
+.logo{
+    width: 230px;
+    height: 80px;
 }
-
-
-input {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #000000;
-    text-align: center;
-    /* margin-right: 130px; */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%)
-
-}
-
-.login-wrapper {
-    /* background-image: url("./canva-photo-editor.png"); */
-    position: absolute;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-}
-
