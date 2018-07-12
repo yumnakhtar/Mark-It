@@ -1,5 +1,6 @@
- <h1 align="center">
-  #Logo Large#
+ 
+<h1 align="center">
+  <img src="./client/src/pages/Login/logo.png" alt="Mark it" width="500"></a>
 </h1>
 
 
@@ -7,6 +8,7 @@ MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt
 
 ## Built With 🏗 🏛
 * HTML5 & CSS3
+* [React](https://reactjs.org/docs/getting-started.html)
 * [Bootstrap](https://getbootstrap.com/) - CSS framework
 * [Javascript](https://www.javascript.com/) - programming language
 * [Node.js](https://nodejs.org/en/) - javascript runtime
