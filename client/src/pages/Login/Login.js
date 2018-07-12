@@ -21,7 +21,6 @@ class Login extends Component {
     })
       .then(data => { return data.json() })
       .then(json => {
-        console.log(json);
         this.setState({
           isLoggedIn: json
         })
@@ -37,12 +36,10 @@ class Login extends Component {
       local_pw: document.getElementById("user-pw").value
     }
     if (selectedButton === "Signup") {
-      console.log("inside signup");
       fetch("/signup", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          // "Content-Type": "application/x-www-form-urlencoded",
         },
         body: JSON.stringify(user),
         credentials: 'include',
@@ -50,7 +47,6 @@ class Login extends Component {
       })
         .then(data => { return data.json() })
         .then(json => {
-          console.log("signup", json);
           this.setState({
             isLoggedIn: json
           })
@@ -70,8 +66,6 @@ class Login extends Component {
       })
         .then(data => { return data.json() })
         .then(json => {
-          // return
-          console.log("signinsignin:", json);
           this.setState({
             isLoggedIn: json
           })
@@ -89,7 +83,6 @@ class Login extends Component {
     })
       .then(data => { return data.json() })
       .then(json => {
-        console.log(json);
         this.setState({
           isLoggedIn: json
         })
@@ -98,12 +91,10 @@ class Login extends Component {
 
   }
   renderLoginForm() {
-    // document.body.style.background = `url(${bg_img}) no-repeat`;
     if (this.state.isLoggedIn) {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
       return (
-        // <Container>
         <div className="row">
           <div className="col-md-3">
             <img className="abstract" src={bg_img} width="350px" />
@@ -111,9 +102,9 @@ class Login extends Component {
           <div className="col-md-9">
             <div className="row">
               <form>
-              <div className="form-group">
-              <img className="logo" src={logo} />
-              </div>
+                <div className="form-group">
+                  <img className="logo" src={logo} />
+                </div>
                 <div className="form-group">
                   <input type="email" id="user-email" placeholder="Your email address" />
                 </div>
@@ -127,7 +118,6 @@ class Login extends Component {
             </div>
           </div>
         </div>
-        // </Container>
       )
     }
   }

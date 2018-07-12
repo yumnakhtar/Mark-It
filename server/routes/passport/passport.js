@@ -17,7 +17,6 @@ router.get('/user', (req, res) => {
 // =====================================
 
 router.get('/logout', (req, res) => {
-  //req.logout();
   req.session.destroy(err => {
     req.logout();
     res.clearCookie("user_sid");
@@ -66,29 +65,12 @@ passportAuthenticate = (localStrategy, req, res, next) => {
     // a response."
     // Source: http://passportjs.org/docs
     // ***********************************************************************
-    // else {
-    //   req.login(user, function(err) {
-    //     if (err) { return next(err); }
-    //     console.log("you are looking for this: ",req.user.uuid);
-    //     return res.redirect('/users/' + req.user.uuid);
-    //   });
-    // }
-
-    // ***********************************************************************
 
     else{
       req.login(user, loginErr => {
         if (loginErr) {
-          console.log("loginerr", loginErr)
           return next(loginErr);
         }
-        // console.log("\n##########################");
-        // console.log(req.isAuthenticated());
-        // console.log('sucess');
-        // console.log(req.session.passport.user);
-        // console.log("##########################");
-        // console.log("\n")
-        // console.log('uuid', user.uuid );
 
         res.cookie('user_uuid', user.uuid );
         res.cookie('user_email', user.email );
