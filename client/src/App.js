@@ -18,6 +18,7 @@ const App = () => (
         <Route exact path="/login" component={Login} />
         <Route component={ErrorPage} />
       </Switch>
+     
       <Footer />
     </div>
   </Router>

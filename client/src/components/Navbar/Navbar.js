@@ -1,12 +1,13 @@
 import React from "react"
 
 const Navbar = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <a className="navbar-brand" href="/">
-     MarkIt
+      <img src="/assets/logo.png" alt="logo" height="40" width="100" />
+
     </a>
   </nav>
-  
+
 )
 
 
