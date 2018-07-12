@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container } from "../../components/Grid";
 import "./login.css";
 import bg_img from './abstract.jpg';
+import logo from './logo.png';
 
 
 class Login extends Component {
@@ -106,20 +107,27 @@ class Login extends Component {
         // <Container>
         <div class="row">
           <div class="col-md-3">
-            <img className="twitter" src={bg_img} width="350px" />
+            <img className="abstract" src={bg_img} width="350px" />
           </div>
           <div class="col-md-9">
-            <form>
+          
+            <div className="row">
+              <form>
               <div className="form-group">
-                <input type="email" id="user-email" placeholder="Your email address" />
+              <img className="logo" src={logo} />
               </div>
-              <div className="form-group">
-                <input type="password" id="user-pw" placeholder="Password" />
-              </div>
-              <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
-              &nbsp;
+                <div className="form-group">
+                  <input type="email" id="user-email" placeholder="Your email address" />
+                </div>
+                <div className="form-group">
+                  <input type="password" id="user-pw" placeholder="Password" />
+                </div>
+                <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
+                &nbsp;
             <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Signin</button>
-            </form></div>
+              </form>
+            </div>
+          </div>
         </div>
         // </Container>
       )
