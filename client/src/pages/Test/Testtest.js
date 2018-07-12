@@ -5,7 +5,7 @@ import API from "../../utils/API";
 class testing extends Component {
     state = {
         categoryName: "",
-        userId: "6e91a560-80a8-11e8-a8aa-71792012fa45"
+        userId: "099bd650-8600-11e8-bc00-13a4fbee32c3"
     };
 
     handleChange = event => {
