@@ -54,8 +54,8 @@ input {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: grey;
-    overflow-x: hidden;
+    /* background-color: grey; */
+    /* overflow-x: hidden; */
     padding: 15px;
     margin-top: 65px 
 

@@ -74,6 +74,19 @@ class Sidebar extends Component {
 		this.setState({ content_add: "add +" });
     }
 
+    handlelogout() {
+        fetch("/logout", {
+            method: 'GET',
+            credentials: 'include',
+            mode: 'cors'
+        })
+            .then(data => { return data.json() })
+            .then(json => {
+                window.location.href = "/login";
+            })
+            .catch(err => console.log("err", err))
+    }
+
     render() {
         return (
             <div className="sidenav">
@@ -97,6 +110,7 @@ class Sidebar extends Component {
 					value={this.state.content_add}
 					style={{ width: this.state.width }}
 				/>
+                <button onClick={this.handlelogout.bind(this)}>logout</button>
             </div>
         )
     }
