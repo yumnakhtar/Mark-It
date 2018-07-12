@@ -9,16 +9,28 @@ import Card from "../../components/Card";
 class Homepage extends Component {
     state = {
         categoryID: "",
-        cookieValue: document.cookie.replace(/(?:(?:^|.*;\s*)user_uuid\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+        cookieValue: document.cookie.replace(/(?:(?:^|.*;\s*)user_uuid\s*\=\s*([^;]*).*$)|^.*$/, "$1"),
+        cards: []
     }
 
+    getCards = () => {
+        console.log("getting cards for: ", this.state.categoryID)
+    }
 
-    handleClick = () => {
-        console.log(this.state.cookieValue)
+    handleClick = (val) => {
+        this.setState({
+            categoryID: val
+        })
+        console.log("call next fun");
+        let time = setTimeout(() => {
+            this.getCards();
+           }, 100); 
     }
 
     render() {
+        console.log(this.state.categoryID)
         let currUser = this.state.cookieValue;
+        let currCategory = this.state.categoryID
         return (
             <div>
                 
@@ -28,7 +40,9 @@ class Homepage extends Component {
                     handleClick={this.handleClick.bind(this)}
                 >
                 </Sidebar>
-                <Card />
+                <Card 
+                    currCategory = {currCategory}
+                />
         </div>
         )
     }

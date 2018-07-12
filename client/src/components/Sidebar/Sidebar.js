@@ -80,7 +80,12 @@ class Sidebar extends Component {
                 {this.state.categories.map(category => { 
                     return  <div> 
                                 <a href="#"value={category.id}
-                                onClick={this.props.handleClick}>{category.name} </a>
+                                onClick={()=> {
+                                    return this.props.handleClick(category.id)
+                                }} 
+                                >{category.name}
+                                
+                                </a>
                             </div>
                 })}
                 
