@@ -4,7 +4,7 @@
 </h1>
 
 
-MarkIt is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt is an app that basically organizes and save your Bookmarks into different categories and subcategories for easy access and quick remebery of saved links. 
+MarkIt  is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkIt is an app that basically organizes and save your Bookmarks into different categories and subcategories for easy access and quick remebery of saved links. 
 
 ## Built With 🏗 🏛
 * HTML5 & CSS3
