@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Navbar from "../../components/Navbar";
+
 import "./ErrorPage.css";
 
 
@@ -11,6 +13,7 @@ class ErrorPage extends Component {
     render() {
         return (
             <div>
+                <Navbar/>
                 <div className="error">
                 </div>
                 <div className="errorbtn">
