@@ -71,7 +71,7 @@ class Login extends Component {
       })
         .then(data => { return data.json() })
         .then(json => {
-          return
+          // return
           console.log("signinsignin:", json);
           this.setState({
             isLoggedIn: json
