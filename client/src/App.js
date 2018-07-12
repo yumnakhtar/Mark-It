@@ -7,8 +7,8 @@ import Navbar from './components/Navbar';
 import ErrorPage from "./pages/ErrorPage"
 import Homepage from './pages/Homepage';
 
-var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)user_uuid\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-console.log("document.cookie from App.js: ",cookieValue);
+// var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)user_uuid\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+// console.log("document.cookie from App.js: ",cookieValue);
 
 // console.log("document.cookie from App.js: ",document.cookie.user_uuid);
 const App = () => (
