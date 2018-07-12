@@ -12,7 +12,7 @@ class Sidebar extends Component {
         this.handleBlur = this.handleBlur.bind(this);		
         this.state = {
             userId: "6e91a560-80a8-11e8-a8aa-71792012fa45",
-            content_add: "",
+            content_add: "add +",
 			width: 100,
             categories: []
         };
@@ -41,7 +41,7 @@ class Sidebar extends Component {
     
     //looks out for any changes in input box and updates instantly
 	handleChange(event) {
-        console.log('handleChange:', event.key)
+        console.log('handleChange:', event)
 		const usr_input = event.target.value;
         this.setState({ content_add: usr_input });
 	}
@@ -57,11 +57,12 @@ class Sidebar extends Component {
             this.setState({
                 content_add: ""
             });
-           var time = setTimeout(() => {
+           let time = setTimeout(() => {
             this.loadCategories();
            }, 100); 
         }
     }
+
 
     //when clicking away from input box, the input box then displays the value of the box
     handleBlur(event) {
@@ -72,9 +73,12 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="sidenav">
-                {this.state.categories.map(category =>
-                    { return <h1>{category.name} </h1>}
-                )}
+                {this.state.categories.map(category => { 
+                    return  <div> 
+                                <h1 value={category.id}>{category.name} </h1>
+                            </div>
+                })}
+                
                 <input
 					id="add"
 					type="text"
