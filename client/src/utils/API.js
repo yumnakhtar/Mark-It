@@ -4,7 +4,7 @@ export default {
   // Gets all categories
   getCategories: () => {
       console.log("document.cookie: ",document.cookie);
-      return axios.get("/api/user/6e91a560-80a8-11e8-a8aa-71792012fa45/category/");
+      return axios.get("/api/user/099bd650-8600-11e8-bc00-13a4fbee32c3/category/");
   },
   saveCategory: category => {
     fetch("/api/user/" + category.userId + "/category/", {

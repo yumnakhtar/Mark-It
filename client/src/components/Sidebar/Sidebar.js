@@ -9,7 +9,8 @@ class Sidebar extends Component {
 		this.handleFocus = this.handleFocus.bind(this);
 		this.handleChange = this.handleChange.bind(this);
         this.handleKeypress = this.handleKeypress.bind(this);
-        this.handleBlur = this.handleBlur.bind(this);		
+        this.handleBlur = this.handleBlur.bind(this);	
+        this.handleClick = this.handleClick.bind(this);		
         this.state = {
             userId: "6e91a560-80a8-11e8-a8aa-71792012fa45",
             content_add: "add +",
@@ -71,7 +72,7 @@ class Sidebar extends Component {
     }
 
     handleClick = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         // alert("click works");
         console.log("click test")
     }
@@ -80,11 +81,11 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="sidenav">
-                {this.state.categories.map(category => { 
-                    return  <div> 
-                                <a href="#"value={category.id} onClick={this.handleClick}>{category.name} </a>
-                            </div>
-                })}
+                {this.state.categories.map(category => (
+                      <div> 
+                        <a href="#" className="categories-display" value={category.id} onClick={this.handleClick}>{category.name} </a>
+                     </div>
+                ))}
                 
                 <input
 					id="add"
