@@ -105,12 +105,11 @@ class Login extends Component {
     } else {
       return (
         // <Container>
-        <div class="row">
-          <div class="col-md-3">
+        <div className="row">
+          <div className="col-md-3">
             <img className="abstract" src={bg_img} width="350px" />
           </div>
-          <div class="col-md-9">
-          
+          <div className="col-md-9">
             <div className="row">
               <form>
               <div className="form-group">
