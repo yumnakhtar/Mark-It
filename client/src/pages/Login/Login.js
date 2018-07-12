@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "../../components/Grid";
 import "./login.css";
-// import bg_img from './canva-photo-editor.png';
+import bg_img from './abstract.jpg';
 
 
 class Login extends Component {
@@ -51,8 +51,6 @@ class Login extends Component {
         .then(data => { return data.json() })
         .then(json => {
           console.log("signup", json);
-          console.log(json);
-
           this.setState({
             isLoggedIn: json
           })
@@ -72,9 +70,8 @@ class Login extends Component {
       })
         .then(data => { return data.json() })
         .then(json => {
-          return 
-          console.log("signin", json);
-          console.log(json);
+          return
+          console.log("signinsignin:", json);
           this.setState({
             isLoggedIn: json
           })
@@ -106,24 +103,25 @@ class Login extends Component {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
       return (
-        // <div className="login-wrapper">
-        <Container>
-          <form className="login__form-group">
-            <div className="form-group" id="emailinpt">
-              <label className="login__form-label">Email :</label>
-              <input type="email" id="user-email" />
-
-            </div>
-            <div className="form-group login__form-group" id="passwordinpt">
-              <label className="login login__form-label">Password :    </label>
-              <input type="password" id="user-pw" />
-            </div>
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
-            &nbsp;
+        // <Container>
+        <div class="row">
+          <div class="col-md-3">
+            <img className="twitter" src={bg_img} width="350px" />
+          </div>
+          <div class="col-md-9">
+            <form>
+              <div className="form-group">
+                <input type="email" id="user-email" placeholder="Your email address" />
+              </div>
+              <div className="form-group">
+                <input type="password" id="user-pw" placeholder="Password" />
+              </div>
+              <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
+              &nbsp;
             <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Signin</button>
-          </form>
-        </Container>
-        // </div>
+            </form></div>
+        </div>
+        // </Container>
       )
     }
   }
