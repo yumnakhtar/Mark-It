@@ -9,8 +9,7 @@ class Sidebar extends Component {
 		this.handleFocus = this.handleFocus.bind(this);
 		this.handleChange = this.handleChange.bind(this);
         this.handleKeypress = this.handleKeypress.bind(this);
-        this.handleBlur = this.handleBlur.bind(this);	
-        this.handleClick = this.handleClick.bind(this);		
+        this.handleBlur = this.handleBlur.bind(this);
         this.state = {
             content_add: "add +",
 			width: 100,
