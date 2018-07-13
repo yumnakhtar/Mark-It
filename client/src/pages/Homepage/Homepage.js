@@ -4,7 +4,7 @@ import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 // import Footer from "../../components/Footer";
 import Card from "../../components/Card";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 class Homepage extends Component {
     state = {
@@ -15,11 +15,24 @@ class Homepage extends Component {
 
     getCards = () => {
         console.log("getting cards for: ", this.state.categoryID)
+        var category = {
+            UserUuid: this.state.cookieValue,
+            CategoryId: this.state.categoryID
+        }
+        API.getBookmarks(category).then(res => {
+            this.setState({ cards: res.data })
+            console.log(this.state.cards)
+            
+        })
+        .catch(error => {
+            console.log("ERROR", error);
+        })
     }
 
     handleClick = (val) => {
         this.setState({
-            categoryID: val
+            categoryID: val,
+            cards: []
         })
         console.log("call next fun");
         let time = setTimeout(() => {
@@ -30,7 +43,8 @@ class Homepage extends Component {
     render() {
         console.log(this.state.categoryID)
         let currUser = this.state.cookieValue;
-        let currCategory = this.state.categoryID
+        let currCategory = this.state.categoryID;
+        let allCards = this.state.cards
         return (
             <div>
                 
@@ -42,6 +56,7 @@ class Homepage extends Component {
                 </Sidebar>
                 <Card 
                     currCategory = {currCategory}
+                    allCards = {allCards}
                 />
         </div>
         )
