@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
 import API from "../../utils/API";
-import Delete from "./delete.png";
-import Edit from "./edit.png";
+// import Delete from "./delete.png";
+// import Edit from "./edit.png";
+import DeleteBtn from "../CategoryIcon";
 
 
 class Sidebar extends Component {
@@ -69,6 +70,24 @@ class Sidebar extends Component {
         }
     }
 
+    handleDelete = id => {
+        let category = {
+            id: id,
+            UserUuid: this.props.currUser
+        }
+        console.log("delete butto works", category)
+        API.deleteCategory(category);
+        let time = setTimeout(() => {
+            this.loadCategories();
+        }, 100);
+            // .then((res) => this.loadCategories())
+            // .catch(error => console.log(error));
+    }
+
+    handleEdit = event => {
+        event.preventDefault();
+        console.log("edit button works", this.props.user)
+    }
 
     //when clicking away from input box, the input box then displays the value of the box
     handleBlur(event) {
@@ -80,16 +99,21 @@ class Sidebar extends Component {
         return (
             <div className="sidenav">
                 {this.state.categories.map(category => {
-                    return <div>
+                    return <ul>
                         <a href="#" value={category.id}
                             onClick={() => {
                                 return this.props.handleClick(category.id)
                             }}
                         >{category.name}
                         </a>
-                        <a href="" class="delete"> <img src={Delete} alt="delete" /></a>
-                        <a href="" class="edit"> <img src={Edit} alt="edit" /></a>
-                    </div>
+                        <DeleteBtn
+                        onClick={() => this.handleDelete(category.id)}
+                            // user="123"
+                            // category={category.id}
+                            // handleDelete={this.handleDelete}
+                            // handleEdit={this.handleEdit}
+                            />
+                    </ul>
                 })}
 
                 <input
