@@ -15,7 +15,6 @@ const App = () => (
         <Route exact path="/login" component={Login} />
         <Route component={ErrorPage} />
       </Switch>
-      <AddBookmarkForm />
       <Footer />
     </div>
   </Router>
