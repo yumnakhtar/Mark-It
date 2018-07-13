@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const subcategoriesController = require("../../controllers/subcategoriesController");
+
+
 // matches with "api/user/:id/subcategory/"
 router
     .route("/")
