@@ -95,28 +95,36 @@ class Login extends Component {
       return (<button onClick={this.handlelogout.bind(this)}>logout</button>)
     } else {
       return (
-        <div className="row">
+        <div className="container-fluid container-login">
+          <div className="row row-no-margin">
           <div className="col-md-3">
             <img className="abstract" src={bg_img} width="350px" />
           </div>
           <div className="col-md-9">
             <div className="row">
-              <form>
-                <div className="form-group">
-                  <img className="logo" src={logo} />
+              <div className="col-md-12 d-flex justify-content-center align-items-center box-login">
+                <div>
+                <form className="text-center">
+                  <div className="form-group">
+                    <img className="logo img-fluid" src={logo} />
+                  </div>
+                  <div className="form-group">
+                    <input type="email" id="user-email" placeholder="Your email address" />
+                  </div>
+                  <div className="form-group">
+                    <input type="password" id="user-pw" placeholder="Password" />
+                  </div>
+                  <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Sign up</button>
+                  &nbsp;
+              <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Sign in</button>
+                </form>
                 </div>
-                <div className="form-group">
-                  <input type="email" id="user-email" placeholder="Your email address" />
-                </div>
-                <div className="form-group">
-                  <input type="password" id="user-pw" placeholder="Password" />
-                </div>
-                <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-up">Signup</button>
-                &nbsp;
-            <button onClick={this.handleLoginSubmit.bind(this)} className="btn btn-primary sign-in">Signin</button>
-              </form>
+              </div>
+             
             </div>
           </div>
+        </div>
+
         </div>
       )
     }

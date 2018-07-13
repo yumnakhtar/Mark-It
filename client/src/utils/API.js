@@ -44,5 +44,9 @@ export default {
   },
   editCategory: function(category) {
       return axios.put("api/user/" + category.userId + "/", category)
-  }
+  },
+    // Gets all booksmarks of category
+    getBookmarks: category => {
+        return axios.get("/api/user/" + category.UserUuid +"/category/" + category.CategoryId+"/bookmark");
+    }
 };
