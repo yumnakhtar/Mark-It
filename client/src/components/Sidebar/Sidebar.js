@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
 import API from "../../utils/API";
-// import Delete from "./delete.png";
-// import Edit from "./edit.png";
-import DeleteBtn from "../CategoryIcon";
-
+import DeleteBtn from "../CategoryIcon/Delete";
+import EditBtn from "../CategoryIcon/Edit.js";
 
 class Sidebar extends Component {
     constructor() {
@@ -80,13 +78,18 @@ class Sidebar extends Component {
         let time = setTimeout(() => {
             this.loadCategories();
         }, 100);
-            // .then((res) => this.loadCategories())
-            // .catch(error => console.log(error));
     }
 
-    handleEdit = event => {
-        event.preventDefault();
-        console.log("edit button works", this.props.user)
+    handleEdit = id => {
+        let category = {
+            id: id,
+            UserUuid: this.props.currUser
+        }
+        console.log("edit button works", id)
+        API.editCategory(category);
+        let time = setTimeout(() => {
+            this.loadCategories();
+        }, 100);
     }
 
     //when clicking away from input box, the input box then displays the value of the box
@@ -107,12 +110,9 @@ class Sidebar extends Component {
                         >{category.name}
                         </a>
                         <DeleteBtn
-                        onClick={() => this.handleDelete(category.id)}
-                            // user="123"
-                            // category={category.id}
-                            // handleDelete={this.handleDelete}
-                            // handleEdit={this.handleEdit}
-                            />
+                        onClick={() => this.handleDelete(category.id)}/>
+                        <EditBtn 
+                        onClick={() => this.handleEdit(category.id)}/>
                     </ul>
                 })}
 
