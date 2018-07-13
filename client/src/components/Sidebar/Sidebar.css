@@ -54,17 +54,24 @@ input {
     z-index: 1;
     top: 0;
     left: 0;
-    /* background-color: grey; */
+    background-color: #403D3D;
     /* overflow-x: hidden; */
     padding: 15px;
     margin-top: 65px 
-
 }
 #add{
     background-color: transparent;
     border: transparent;
 }
-
-.categories-display{
-    color: teal;
+/* .categories-display{
+    color: white;
+} */
+a{
+    color: white;
 }
+a:hover { 
+    /* background-color: yellow; */
+    color: white;
+    text-decoration: none;
+}
+a:hover, a:active {font-size: 130%;}
