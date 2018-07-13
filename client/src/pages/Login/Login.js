@@ -35,7 +35,7 @@ class Login extends Component {
       email: document.getElementById("user-email").value,
       local_pw: document.getElementById("user-pw").value
     }
-    if (selectedButton === "Signup") {
+    if (selectedButton === "Sign up") {
       fetch("/signup", {
         method: 'POST',
         headers: {
@@ -54,7 +54,7 @@ class Login extends Component {
 
         })
         .catch(err => console.log("err", err));
-    } else if (selectedButton === "Signin") {
+    } else if (selectedButton === "Sign in") {
       fetch("/signin", {
         method: 'POST',
         headers: {
