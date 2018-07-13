@@ -19,15 +19,13 @@ class Navbar extends Component {
 
   render() {
     return (
-
       <nav className="navbar navbar-light bg-light justify-content-between">
         <a className="navbar-brand"> <img src={logo} alt="logo" height="40px" width="120px" /></a>
         <button onClick={this.handlelogout.bind(this)}>logout</button>
       </nav>
+
     )
   }
 }
-
-
 
 export default Navbar;

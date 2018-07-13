@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
+import AddBookmarkForm from "../../components/AddBookmarkForm";
 import API from "../../utils/API";
 
 class Homepage extends Component {
@@ -46,16 +47,24 @@ class Homepage extends Component {
         return (
             <div>
                 <Navbar />
+                <div class="row">
+                <div class="col-md-3">
                 <Sidebar
                     currUser={currUser}
                     handleClick={this.handleAdd.bind(this)}
                 >
                 </Sidebar>
-                <Card
-                    currCategory={currCategory}
-                    allCards={allCards}
+                </div>
+                <div class="col-md-9">
+                <Card 
+                    currCategory = {currCategory}
+                    allCards = {allCards}
                 />
-            </div>
+                
+                </div>
+                </div>
+        </div>
+
         )
     }
 }
