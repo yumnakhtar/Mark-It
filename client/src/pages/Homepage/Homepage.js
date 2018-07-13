@@ -4,7 +4,6 @@ import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import API from "../../utils/API";
 
-
 class Homepage extends Component {
     state = {
         categoryID: "",
