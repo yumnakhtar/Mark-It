@@ -32,8 +32,6 @@ class ExampleApp extends React.Component {
                     isOpen={this.state.showModal}
                     contentLabel="Minimal Modal Example"
                 >
-                    {/* Bootstrap form start */}
-
                     <form>
                         <div class="form-group">
                             <input type="text" class="form-control" id="category-name"  placeholder="Bookmark Name" />
@@ -42,12 +40,10 @@ class ExampleApp extends React.Component {
                             <input type="url" class="form-control" id="category-url" placeholder="Bookmark URL" />
                         </div>
                         <div class="form-group">
-                            {/* <input type="text" class="form-control" id="category-description" placeholder="Enter a brief description about the bookmark" /> */}
                             <textarea class="form-control" id="category-description" rows="3" placeholder="Enter a brief description about the bookmark"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    {/* Bootstrap form end */}
                     <button onClick={this.handleCloseModal}>Close Modal</button>
                 </ReactModal>
             </div>

@@ -60,7 +60,7 @@ class Homepage extends Component {
                     currCategory = {currCategory}
                     allCards = {allCards}
                 />
-                
+                <AddBookmarkForm />
                 </div>
                 </div>
         </div>
