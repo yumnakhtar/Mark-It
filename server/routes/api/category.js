@@ -1,12 +1,14 @@
 const router = require("express").Router();
 const categoriesController = require("../../controllers/categoriesController");
+
+
 // matches with "api/user/:id/category/"
 router
     .route("/")
     //CREATE: create new category
     .post(categoriesController.create)
     //READ: get an existing category
-    .get(categoriesController.findById)  
+    .get(categoriesController.findById)
     //UPDATE: edit existing category
     .put(categoriesController.update)
     //DELETE: remove existing category

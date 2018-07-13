@@ -21,14 +21,14 @@ class Homepage extends Component {
         API.getBookmarks(category).then(res => {
             this.setState({ cards: res.data })
             console.log(this.state.cards)
-            
+
         })
-        .catch(error => {
-            console.log("ERROR", error);
-        })
+            .catch(error => {
+                console.log("ERROR", error);
+            })
     }
 
-    handleClick = (val) => {
+    handleAdd = (val) => {
         this.setState({
             categoryID: val,
             cards: []
@@ -36,7 +36,7 @@ class Homepage extends Component {
         console.log("call next fun");
         let time = setTimeout(() => {
             this.getCards();
-           }, 100); 
+        }, 100);
     }
 
     render() {
@@ -51,7 +51,7 @@ class Homepage extends Component {
                 <div class="col-md-3">
                 <Sidebar
                     currUser={currUser}
-                    handleClick={this.handleClick.bind(this)}
+                    handleClick={this.handleAdd.bind(this)}
                 >
                 </Sidebar>
                 </div>
