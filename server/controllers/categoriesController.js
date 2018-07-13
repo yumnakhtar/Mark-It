@@ -26,12 +26,12 @@ module.exports = {
     },
     remove: function (req, res) {
         db.Categories
-            .destroy({ 
+            .destroy({
                 where: {
                     name: req.body.name,
                     UserUuid: req.body.UserUuid
                 }
-             })
+            })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },

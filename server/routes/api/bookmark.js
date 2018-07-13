@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const bookmarksController = require("../../controllers/bookmarksController");
+
+
 // matches with "api/user/:id/bookmark/"
 router
     .route("/")

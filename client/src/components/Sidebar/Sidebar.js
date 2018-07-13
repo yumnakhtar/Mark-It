@@ -6,15 +6,15 @@ import Edit from "./edit.png";
 
 
 class Sidebar extends Component {
-    constructor(){
+    constructor() {
         super();
-		this.handleFocus = this.handleFocus.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleKeypress = this.handleKeypress.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
         this.state = {
             content_add: "add +",
-			width: 100,
+            width: 100,
             categories: []
         };
     }
@@ -42,19 +42,19 @@ class Sidebar extends Component {
     handleFocus(event) {
         console.log('handleFocus:', event)
         console.log(this.props.currUser)
-		this.setState({ content_add: "" });
-	}
-    
+        this.setState({ content_add: "" });
+    }
+
     //looks out for any changes in input box and updates instantly
-	handleChange(event) {
+    handleChange(event) {
         console.log('handleChange:', event)
-		const usr_input = event.target.value;
+        const usr_input = event.target.value;
         this.setState({ content_add: usr_input });
-	}
+    }
 
     //looks for enter
-	handleKeypress(event) {
-		if (event.key === "Enter") {
+    handleKeypress(event) {
+        if (event.key === "Enter") {
             var category = {
                 UserUuid: this.props.currUser,
                 name: this.state.content_add
@@ -63,9 +63,9 @@ class Sidebar extends Component {
             this.setState({
                 content_add: ""
             });
-           let time = setTimeout(() => {
-            this.loadCategories();
-           }, 100); 
+            let time = setTimeout(() => {
+                this.loadCategories();
+            }, 100);
         }
     }
 
@@ -73,38 +73,38 @@ class Sidebar extends Component {
     //when clicking away from input box, the input box then displays the value of the box
     handleBlur(event) {
         console.log('handleBlur:', event)
-		this.setState({ content_add: "add +" });
+        this.setState({ content_add: "add +" });
     }
 
     render() {
         return (
             <div className="sidenav">
-                {this.state.categories.map(category => { 
-                    return  <div> 
-                                <a href="#"value={category.id}
-                                onClick={()=> {
-                                    return this.props.handleClick(category.id)
-                                }} 
-                                >{category.name}
-                                </a>
-                                <a href="" class="delete"> <img src={Delete} alt="delete" /></a>
-                                <a href="" class="edit"> <img src={Edit} alt="edit" /></a>
-                            </div>
+                {this.state.categories.map(category => {
+                    return <div>
+                        <a href="#" value={category.id}
+                            onClick={() => {
+                                return this.props.handleClick(category.id)
+                            }}
+                        >{category.name}
+                        </a>
+                        <a href="" class="delete"> <img src={Delete} alt="delete" /></a>
+                        <a href="" class="edit"> <img src={Edit} alt="edit" /></a>
+                    </div>
                 })}
-                
+
                 <input
-					id="add"
-					type="text"
-					name="initvalue"
-					autoComplete="off"
-				    maxLength="70"
-					onFocus={this.handleFocus}
-					onChange={this.handleChange}
+                    id="add"
+                    type="text"
+                    name="initvalue"
+                    autoComplete="off"
+                    maxLength="70"
+                    onFocus={this.handleFocus}
+                    onChange={this.handleChange}
                     onKeyPress={this.handleKeypress}
                     onBlur={this.handleBlur}
-					value={this.state.content_add}
-					style={{ width: this.state.width }}
-				/>
+                    value={this.state.content_add}
+                    style={{ width: this.state.width }}
+                />
             </div>
         )
     }
