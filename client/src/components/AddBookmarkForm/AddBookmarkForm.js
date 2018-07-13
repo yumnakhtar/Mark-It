@@ -5,7 +5,7 @@ import './AddBookmarkForm.css';
 import icon from './icon.png';
 
 
-class ExampleApp extends React.Component {
+class AddBookmarkForm extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -32,6 +32,7 @@ class ExampleApp extends React.Component {
                     isOpen={this.state.showModal}
                     contentLabel="Minimal Modal Example"
                 >
+                <h3>Add new bookmark</h3>
                     <form>
                         <div class="form-group">
                             <input type="text" class="form-control" id="category-name"  placeholder="Bookmark Name" />
@@ -51,4 +52,4 @@ class ExampleApp extends React.Component {
     }
 }
 
-export default ExampleApp;
+export default AddBookmarkForm;
