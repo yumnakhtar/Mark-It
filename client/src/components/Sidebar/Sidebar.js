@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
 import API from "../../utils/API";
-import Delete from "./delete.png";
-import Edit from "./edit.png";
-
+import DeleteBtn from "../CategoryIcon/Delete";
+import EditBtn from "../CategoryIcon/Edit.js";
 
 class Sidebar extends Component {
     constructor() {
@@ -69,6 +68,29 @@ class Sidebar extends Component {
         }
     }
 
+    handleDelete = id => {
+        let category = {
+            id: id,
+            UserUuid: this.props.currUser
+        }
+        console.log("delete butto works", category)
+        API.deleteCategory(category);
+        let time = setTimeout(() => {
+            this.loadCategories();
+        }, 100);
+    }
+
+    handleEdit = id => {
+        let category = {
+            id: id,
+            UserUuid: this.props.currUser
+        }
+        console.log("edit button works", id)
+        API.editCategory(category);
+        let time = setTimeout(() => {
+            this.loadCategories();
+        }, 100);
+    }
 
     //when clicking away from input box, the input box then displays the value of the box
     handleBlur(event) {
@@ -80,16 +102,18 @@ class Sidebar extends Component {
         return (
             <div className="sidenav">
                 {this.state.categories.map(category => {
-                    return <div>
+                    return <ul>
                         <a href="#" value={category.id}
                             onClick={() => {
                                 return this.props.handleClick(category.id)
                             }}
                         >{category.name}
                         </a>
-                        <a href="" class="delete"> <img src={Delete} alt="delete" /></a>
-                        <a href="" class="edit"> <img src={Edit} alt="edit" /></a>
-                    </div>
+                        <DeleteBtn
+                        onClick={() => this.handleDelete(category.id)}/>
+                        <EditBtn 
+                        onClick={() => this.handleEdit(category.id)}/>
+                    </ul>
                 })}
 
                 <input

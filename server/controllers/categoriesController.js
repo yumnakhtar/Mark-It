@@ -28,7 +28,7 @@ module.exports = {
         db.Categories
             .destroy({
                 where: {
-                    name: req.body.name,
+                    id: req.body.id,
                     UserUuid: req.body.UserUuid
                 }
             })

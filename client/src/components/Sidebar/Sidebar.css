@@ -29,3 +29,8 @@ a:hover {
 a:hover, a:active {
     font-size: 130%;
 }
+
+ul {
+    padding: 5px;
+    /* float: left; */
+}

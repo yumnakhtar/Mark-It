@@ -98,7 +98,7 @@ class Login extends Component {
         <div className="container-fluid container-login">
           <div className="row row-no-margin">
             <div className="col-md-3">
-              <img className="abstract" src={bg_img} width="350px" />
+              <img alt="abstract" className="abstract" src={bg_img} width="350px" />
             </div>
             <div className="col-md-9">
               <div className="row">
@@ -106,7 +106,7 @@ class Login extends Component {
                   <div>
                     <form className="text-center">
                       <div className="form-group">
-                        <img className="logo img-fluid" src={logo} />
+                        <img alt="logo" className="logo img-fluid" src={logo} />
                       </div>
                       <div className="form-group">
                         <input type="email" id="user-email" placeholder="Your email address" />

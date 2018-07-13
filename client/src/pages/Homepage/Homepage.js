@@ -27,7 +27,7 @@ class Homepage extends Component {
             })
     }
 
-    handleClick = (val) => {
+    handleAdd = (val) => {
         this.setState({
             categoryID: val,
             cards: []
@@ -48,7 +48,7 @@ class Homepage extends Component {
                 <Navbar />
                 <Sidebar
                     currUser={currUser}
-                    handleClick={this.handleClick.bind(this)}
+                    handleClick={this.handleAdd.bind(this)}
                 >
                 </Sidebar>
                 <Card
