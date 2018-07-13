@@ -26,11 +26,12 @@ form{
 
 input{
     /* width: 400px; */
-    width: 40%;
+    width: 45%;
 }
 
 .box-login {
     height:700px;
+   
 }
 
  /* .logo{
@@ -39,7 +40,7 @@ input{
 }  */
 
  .logo{
-    max-width: 25%;
+    max-width: 43%;
 } 
 .btn{
     width: 15%;
