@@ -43,7 +43,8 @@ class Homepage extends Component {
     render() {
         console.log(this.state.categoryID)
         let currUser = this.state.cookieValue;
-        let currCategory = this.state.categoryID
+        let currCategory = this.state.categoryID;
+        let allCards = this.state.cards
         return (
             <div>
                 
@@ -55,6 +56,7 @@ class Homepage extends Component {
                 </Sidebar>
                 <Card 
                     currCategory = {currCategory}
+                    allCards = {allCards}
                 />
         </div>
         )
