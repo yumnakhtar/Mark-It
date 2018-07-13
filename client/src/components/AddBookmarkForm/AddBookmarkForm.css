@@ -4,5 +4,12 @@
 
 .ReactModal__Content{
     margin-left: 200px;
-    margin-top: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 50px;
+}
+#add-icon{
+position: fixed;
+right: 15px;
+bottom: 45px;
 }

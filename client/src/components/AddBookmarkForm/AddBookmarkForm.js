@@ -27,7 +27,7 @@ class ExampleApp extends React.Component {
     render() {
         return (
             <div>
-                <button id="modal-button" onClick={this.handleOpenModal}><img src={icon} alt="add icon" /></button>
+                <div id="modal-button" onClick={this.handleOpenModal}><img id="add-icon" src={icon} alt="add icon" /></div>
                 <ReactModal
                     isOpen={this.state.showModal}
                     contentLabel="Minimal Modal Example"
