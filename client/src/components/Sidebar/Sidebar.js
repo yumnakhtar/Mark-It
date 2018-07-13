@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
 import API from "../../utils/API";
+import Delete from "./delete.png";
+import Edit from "./edit.png";
 
 
 class Sidebar extends Component {
@@ -84,8 +86,9 @@ class Sidebar extends Component {
                                     return this.props.handleClick(category.id)
                                 }} 
                                 >{category.name}
-                                
                                 </a>
+                                <a href="" class="delete"> <img src={Delete} alt="delete" /></a>
+                                <a href="" class="edit"> <img src={Edit} alt="edit" /></a>
                             </div>
                 })}
                 
