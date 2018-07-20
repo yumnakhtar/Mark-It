@@ -1,4 +1,5 @@
 // Set up ======================================================
+app.use(express.static("../client/build"));
 
 require("dotenv").config();
 //Dependencies
