@@ -1,0 +1,22 @@
+{
+  "name": "Mark-It",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">   <img src=\"./client/src/pages/Login/logo.png\" alt=\"Mark it\" width=\"500\"></a> </h1>",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumnakhtar/Mark-It.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yumnakhtar/Mark-It/issues"
+  },
+  "homepage": "https://github.com/yumnakhtar/Mark-It#readme"
+}
