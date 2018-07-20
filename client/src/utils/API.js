@@ -48,5 +48,24 @@ export default {
     // Gets all booksmarks of category
     getBookmarks: category => {
         return axios.get("/api/user/" + category.UserUuid +"/category/" + category.CategoryId+"/bookmark");
-    }
+    },
+
+    saveBookmark: bookmark => {
+        console.log('saveBookmark: bookmark', bookmark)
+        fetch("/api/user/" + bookmark.UserUuid + "/bookmark/", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+            },
+            body: JSON.stringify(bookmark),
+            mode: 'cors'
+        })
+            .then(data => { return data })
+            // .then(json => {
+            //     (json)
+            // })
+            .catch(error => {
+                console.log("ERROR", error);
+            });
+      }
 };

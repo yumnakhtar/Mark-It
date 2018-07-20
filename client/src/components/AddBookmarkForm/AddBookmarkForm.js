@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 import './AddBookmarkForm.css';
 import icon from './icon.png';
+import API from "../../utils/API";
 
 
 class AddBookmarkForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            showModal: false
+            showModal: false,
+            bookmarkName: "",
+            url: "",
+            description: ""
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -24,6 +28,31 @@ class AddBookmarkForm extends React.Component {
         this.setState({ showModal: false });
     }
 
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.bookmarkName && this.state.url) {
+          API.saveBookmark({
+            bookmarkName: this.state.bookmarkName,
+            url: this.state.url,
+            description: this.state.description,
+            UserUuid: this.props.UserUuid,
+            CategoryId: this.props.currCategory
+            // SubcategoryId: 1
+          })
+            // .catch(err => console.log(err))
+        }
+        let time = setTimeout(() => {
+            this.props.loadCards;
+        }, 100);
+      };
+
     render() {
         return (
             <div>
@@ -34,16 +63,39 @@ class AddBookmarkForm extends React.Component {
                 >
                 <h3>Add new bookmark</h3>
                     <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="category-name"  placeholder="Bookmark Name" />
+                        <div className="form-group">
+                            <input 
+                            className="form-control"
+                            name="bookmarkName" 
+                            value={this.state.bookmarkName}
+                            onChange={this.handleInputChange} 
+                            type="text" 
+                            id={"category-name"}  
+                            placeholder="Bookmark Name" />
                         </div>
-                        <div class="form-group">
-                            <input type="url" class="form-control" id="category-url" placeholder="Bookmark URL" />
+                        <div className="form-group">
+                            <input className="form-control"
+                            name="url"
+                            value={this.state.url}
+                            onChange={this.handleInputChange} 
+                            type="url"  
+                            id="category-url" 
+                            placeholder="Bookmark URL" />
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="category-description" rows="3" placeholder="Enter a brief description about the bookmark"></textarea>
+                        <div className="form-group">
+                            <textarea 
+                            className="form-control" 
+                            name="description"
+                            value={this.state.description}
+                            onChange={this.handleInputChange}
+                            id="category-description" 
+                            rows="3" 
+                            placeholder="Enter a brief description about the bookmark"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button 
+                        type="submit" 
+                        className="btn btn-primary"
+                        onClick={this.handleFormSubmit}>Submit</button>
                     </form>
                     <button onClick={this.handleCloseModal}>Close Modal</button>
                 </ReactModal>

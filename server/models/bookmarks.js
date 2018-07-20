@@ -42,7 +42,8 @@ module.exports = function (sequelize, DataTypes) {
       }),
       Bookmarks.belongsTo(models.Subcategories, {
         foreignKey: {
-          allowNull: false
+          allowNull: true,
+          defaultValue: 1
         }
       }),
       Bookmarks.belongsTo(models.Users, {
