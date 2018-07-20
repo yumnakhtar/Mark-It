@@ -47,20 +47,24 @@ class Homepage extends Component {
         return (
             <div>
                 <Navbar />
-                <div class="row">
-                <div class="col-md-3">
+                <div className="row">
+                <div className="col-md-3">
                 <Sidebar
                     currUser={currUser}
                     handleClick={this.handleAdd.bind(this)}
                 >
                 </Sidebar>
                 </div>
-                <div class="col-md-9">
+                <div className="col-md-9">
                 <Card 
                     currCategory = {currCategory}
                     allCards = {allCards}
                 />
-                <AddBookmarkForm />
+                <AddBookmarkForm 
+                     currCategory = {currCategory}
+                     loadCards = {this.getCards}
+                     UserUuid = {this.state.cookieValue}
+                />
                 </div>
                 </div>
         </div>

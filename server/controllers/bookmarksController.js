@@ -3,7 +3,8 @@ const db = require("../models");
 
 module.exports = {
     create: function (req, res) {
-        db.bookmarks
+        console.log("books create API")
+        db.Bookmarks
             .create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
