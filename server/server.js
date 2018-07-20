@@ -1,5 +1,4 @@
 // Set up ======================================================
-app.use(express.static("../client/build"));
 
 require("dotenv").config();
 //Dependencies
@@ -23,6 +22,7 @@ const db     = require("./models");
 
 require('./config/passport')(passport); // pass passport for configuration
 
+app.use(express.static("../client/build"));
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: true }));
