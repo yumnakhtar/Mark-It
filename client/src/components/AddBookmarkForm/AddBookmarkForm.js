@@ -21,7 +21,7 @@ class AddBookmarkForm extends React.Component {
     }
 
     handleOpenModal() {
-        this.setState({ showModal: true });
+        this.setState({ showModal: true }); 
     }
 
     handleCloseModal() {
