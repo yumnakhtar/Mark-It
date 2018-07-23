@@ -24,8 +24,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./server/server.js",
-    "start:prod": "node ./server/server.js",
+    "start": "cd server && node server.js",
+    "start:prod": "cd server && node server.js",
     "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
