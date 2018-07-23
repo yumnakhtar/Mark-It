@@ -4,6 +4,7 @@
   "description": "<h1 align=\"center\">   <img src=\"./client/src/pages/Login/logo.png\" alt=\"Mark it\" width=\"500\"></a> </h1>",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "if-env": "^1.0.4"
   },
   "devDependencies": {},
