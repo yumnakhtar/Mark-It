@@ -39,7 +39,7 @@ MarkIt  is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkI
 
 ## Site and Code Links :link:
 
-* **Heroku Link** - [Deployed site]()
+* **Heroku Link** - [Deployed site](https://arcane-temple-39642.herokuapp.com/)
 * **GitHup Repo** - [Code link](https://github.com/yumnakhtar/Mark-It)
 
 
@@ -49,9 +49,6 @@ MarkIt  is the Pinterest for bookmarks! Helps you de-clutter your clutter. MarkI
 * **[Yumna Akhtar](https://github.com/yumnakhtar)** 
 
 ## Routes 🔥💣
- ### screensahoot of the routes
-
-
 
 Because this was a full stack app, we had to create our own routes for our client to interact with the server. We had to definte everything from the `get` methods that serve up html to the `post` and `put` methods to interact with our database. So many interconnected parts meant that the Front-end and the Back-end developers had to maintain good communication to produce a coherent product.
 
@@ -63,4 +60,4 @@ We chose to keep the models for the app simple for now: each user has many Bucke
 
 
 ## Acknowledgments :pray:
-A huge and immerse thank you to our instructor, [Jerome](https://www.linkedin.com/in/jeromechenette/), [Danny](https://www.linkedin.com/in/droxey/), and [Micheal](https://www.linkedin.com/in/mkleincreative/) and the TAs, [Amber](https://www.linkedin.com/in/amber-burroughs-29a69467/), [Ricky](https://www.linkedin.com/in/rickyfeng/), and [Sasha](https://www.linkedin.com/in/sasha-patsel-064aab132/)!!   👯‍♂️👯‍♀️
+A huge and immerse thank you to our instructors, [Jerome](https://www.linkedin.com/in/jeromechenette/), [Danny](https://www.linkedin.com/in/droxey/), and [Micheal](https://www.linkedin.com/in/mkleincreative/) and the TAs, [Amber](https://www.linkedin.com/in/amber-burroughs-29a69467/), [Ricky](https://www.linkedin.com/in/rickyfeng/), and [Sasha](https://www.linkedin.com/in/sasha-patsel-064aab132/)!!   👯‍♂️👯‍♀️
