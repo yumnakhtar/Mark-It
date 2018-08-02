@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
 import './AddBookmarkForm.css';
 import icon from './icon.png';
@@ -48,7 +48,7 @@ class AddBookmarkForm extends React.Component {
           })
             // .catch(err => console.log(err))
         }
-        let time = setTimeout(() => {
+        setTimeout(() => {
             this.props.loadCards;
         }, 100);
       };

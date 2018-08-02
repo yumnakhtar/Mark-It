@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = props => (
   <div>
     {props.allCards.map(each => (
-      <div className="card">
+      <div className="card" key={each.name}>
         <div className="card-body">
           <h5 className="card-title">{each.name}</h5>
           <p className="card-text">{each.description}</p>

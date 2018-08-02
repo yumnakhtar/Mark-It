@@ -24,8 +24,8 @@ export default {
   },
   deleteCategory: category => {
     //   return axios.delete("api/user/" + category.userId + "/", category)
-    console.log(category.UserUuid)
-    console.log(category.id)
+    // console.log(category.UserUuid)
+    // console.log(category.id)
     fetch("/api/user/" + category.UserUuid + "/category/" + category.id, {
         method: 'DELETE',
         headers: {

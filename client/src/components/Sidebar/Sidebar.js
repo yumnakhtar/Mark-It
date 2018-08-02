@@ -30,7 +30,7 @@ class Sidebar extends Component {
         }
         API.getCategories(category).then(res => {
             this.setState({ categories: res.data })
-            console.log(this.state.categories)
+            // console.log(this.state.categories)
         }
         ).catch(error => {
             console.log("ERROR", error);
@@ -39,14 +39,14 @@ class Sidebar extends Component {
 
     //when you click on the input box, it clears the space in order in enter user value
     handleFocus(event) {
-        console.log('handleFocus:', event)
-        console.log(this.props.currUser)
+        // console.log('handleFocus:', event)
+        // console.log(this.props.currUser)
         this.setState({ content_add: "" });
     }
 
     //looks out for any changes in input box and updates instantly
     handleChange(event) {
-        console.log('handleChange:', event)
+        // console.log('handleChange:', event)
         const usr_input = event.target.value;
         this.setState({ content_add: usr_input });
     }
@@ -62,7 +62,7 @@ class Sidebar extends Component {
             this.setState({
                 content_add: ""
             });
-            let time = setTimeout(() => {
+            setTimeout(() => {
                 this.loadCategories();
             }, 100);
         }
@@ -73,9 +73,9 @@ class Sidebar extends Component {
             id: id,
             UserUuid: this.props.currUser
         }
-        console.log("delete butto works", category)
+        // console.log("delete butto works", category)
         API.deleteCategory(category);
-        let time = setTimeout(() => {
+        setTimeout(() => {
             this.loadCategories();
         }, 100);
     }
@@ -87,14 +87,14 @@ class Sidebar extends Component {
         }
         console.log("edit button works", id)
         API.editCategory(category);
-        let time = setTimeout(() => {
+        setTimeout(() => {
             this.loadCategories();
         }, 100);
     }
 
     //when clicking away from input box, the input box then displays the value of the box
     handleBlur(event) {
-        console.log('handleBlur:', event)
+        // console.log('handleBlur:', event)
         this.setState({ content_add: "add +" });
     }
 
@@ -103,7 +103,7 @@ class Sidebar extends Component {
             <div className="sidenav">
             <h4>Categories</h4>
                 {this.state.categories.map(category => {
-                    return <ul>
+                    return (<ul key={category.id}>
                         <a href="#" value={category.id}
                             onClick={() => {
                                 return this.props.handleClick(category.id)
@@ -114,7 +114,7 @@ class Sidebar extends Component {
                         onClick={() => this.handleDelete(category.id)}/>
                         <EditBtn 
                         onClick={() => this.handleEdit(category.id)}/>
-                    </ul>
+                    </ul>)
                 })}
 
                 <input

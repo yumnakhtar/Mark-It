@@ -15,14 +15,14 @@ class Homepage extends Component {
     }
 
     getCards = () => {
-        console.log("getting cards for: ", this.state.categoryID)
+        // console.log("getting cards for: ", this.state.categoryID)
         var category = {
             UserUuid: this.state.cookieValue,
             CategoryId: this.state.categoryID
         }
         API.getBookmarks(category).then(res => {
             this.setState({ cards: res.data })
-            console.log(this.state.cards)
+            // console.log(this.state.cards)
 
         })
             .catch(error => {
@@ -35,14 +35,14 @@ class Homepage extends Component {
             categoryID: val,
             cards: []
         })
-        console.log("call next fun");
-        let time = setTimeout(() => {
+        // console.log("call next fun");
+        setTimeout(() => {
             this.getCards();
         }, 100);
     }
 
     render() {
-        console.log(this.state.categoryID)
+        // console.log(this.state.categoryID)
         let currUser = this.state.cookieValue;
         let currCategory = this.state.categoryID;
         let allCards = this.state.cards

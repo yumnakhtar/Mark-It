@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Login from './pages/Login';
 import Footer from './components/Footer';
-import AddBookmarkForm from './components/AddBookmarkForm';
+// import AddBookmarkForm from './components/AddBookmarkForm';
 import ErrorPage from "./pages/ErrorPage"
 import Homepage from './pages/Homepage';
 
