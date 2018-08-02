@@ -101,6 +101,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="sidenav">
+            <h4>Categories</h4>
                 {this.state.categories.map(category => {
                     return <ul>
                         <a href="#" value={category.id}

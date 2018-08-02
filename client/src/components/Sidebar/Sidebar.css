@@ -6,7 +6,6 @@
     top: 0;
     left: 0;
     background-color: hsl(310, 35%, 40%);
-    padding-top: 10%;
     padding-left: 15px;
     margin-top: 65px ;
     font-family: 'Rubik', sans-serif;
@@ -17,20 +16,18 @@
     border: transparent;
 }
 
-a {
+a, a:hover {
     color: white;
 }
 
-a:hover { 
-    color: white;
-    text-decoration: none;
-}
-
-a:hover, a:active {
-    font-size: 130%;
+a:active {
+    font-weight: bold;
 }
 
 ul {
     padding: 5px;
-    /* float: left; */
+}
+
+h4 {
+    padding-top: 10%;
 }

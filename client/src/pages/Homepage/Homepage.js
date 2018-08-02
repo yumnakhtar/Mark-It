@@ -4,6 +4,8 @@ import Navbar from "../../components/Navbar";
 import Card from "../../components/Card";
 import AddBookmarkForm from "../../components/AddBookmarkForm";
 import API from "../../utils/API";
+import "./style.css";
+
 
 class Homepage extends Component {
     state = {
@@ -48,14 +50,15 @@ class Homepage extends Component {
             <div>
                 <Navbar />
                 <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-2">
                 <Sidebar
                     currUser={currUser}
                     handleClick={this.handleAdd.bind(this)}
                 >
                 </Sidebar>
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-10">
+                <h2>Bookmarks</h2>
                 <Card 
                     currCategory = {currCategory}
                     allCards = {allCards}
