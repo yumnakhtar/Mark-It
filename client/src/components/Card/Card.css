@@ -1,6 +1,7 @@
 .card{
-    width: 80%;
+    width: 90%;
     position: relative;
-    left: 200px;
-    top: 100px;
+    /* left: 200px; */
+    /* top: 100px; */
+    margin: 20px;
 }
