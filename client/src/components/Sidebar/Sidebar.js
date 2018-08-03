@@ -117,51 +117,32 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="sidenav">
-            <h4>Categories</h4>
-            <ul>
-                {this.state.categories.map(category => {
-                    return <li key={category.id}>
-                        <a href="#" className="name"
-                            value={category.id}
-                            onClick={() => {
-                            return this.props.handleClick(category.id)
-                            }}
-                        >{category.name}
-                        </a>
-                        <DeleteBtn
-                        onClick={() => this.handleDelete(category.id)}/>
-                        <EditBtn 
-                        onFocus={this.handleEditFocus}
-                        // id="edit"
-                        // type="text"  
-                        // autoComplete="off"
-                        // maxLength="70"
-                        // // style={{ width: this.state.width }}
-                        // value={category.name}
-                        onClick={() => this.handleEditClick(category.id)}
-                        />
-                    </li>
-                })}
-            </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* })} */}
-
+                <h4>Categories</h4>
+                <ul>
+                    {this.state.categories.map(category => {
+                        return <li key={category.id}>
+                            <a href="#" className="name"
+                                value={category.id}
+                                onClick={() => {
+                                return this.props.handleClick(category.id)
+                                }}
+                            >{category.name}
+                            </a>
+                            <DeleteBtn
+                            onClick={() => this.handleDelete(category.id)}/>
+                            <EditBtn 
+                            onFocus={this.handleEditFocus}
+                            // id="edit"
+                            // type="text"  
+                            // autoComplete="off"
+                            // maxLength="70"
+                            // // style={{ width: this.state.width }}
+                            // value={category.name}
+                            onClick={() => this.handleEditClick(category.id)}
+                            />
+                        </li>
+                    })}
+                </ul>
                 <input
                     id="add"
                     type="text"

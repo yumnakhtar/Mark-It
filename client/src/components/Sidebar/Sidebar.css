@@ -14,6 +14,7 @@
 #add {
     background-color: transparent;
     border: transparent;
+    cursor: pointer;
 }
 
 .name, .name:hover {
