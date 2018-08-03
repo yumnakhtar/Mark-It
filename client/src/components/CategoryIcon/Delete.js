@@ -3,9 +3,7 @@ import "./CategoryIcon.css";
 import Delete from "./delete.png";
 
 const Card = props => (
-  // <div>
-    <a href="#" className="delete" {...props}> <img src={Delete} alt="delete" /></a>
-  // </div>
+    <a href="#" className="delete" {...props}> <img src={Delete} className="delete-bin" alt="delete" /></a>
 )
 
 export default Card;

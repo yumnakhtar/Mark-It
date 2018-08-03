@@ -3,9 +3,7 @@ import "./CategoryIcon.css";
 import Edit from "./edit.png";
 
 const Card = props => (
-  // <div>
-    <a href="#" className="edit" {...props}> <img src={Edit} alt="edit" /></a>
-  // </div>
+    <a href="#" className="edit" {...props}> <img src={Edit} className="edit-pen" alt="edit" /></a>
 )
 
 export default Card;
