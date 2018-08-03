@@ -56,7 +56,9 @@ class AddBookmarkForm extends React.Component {
     render() {
         return (
             <div>
-                <div id="modal-button" onClick={this.handleOpenModal}><img id="add-icon" src={icon} alt="add icon" /></div>
+                <div id="modal-button" onClick={this.handleOpenModal}>
+                    <img id="add-icon" src={icon} alt="add icon" />
+                </div>
                 <ReactModal
                     isOpen={this.state.showModal}
                     contentLabel="Minimal Modal Example"
