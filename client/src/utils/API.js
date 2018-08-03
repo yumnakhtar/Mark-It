@@ -43,7 +43,7 @@ export default {
         });
   },
   editCategory: function(category) {
-      return axios.put("api/user/" + category.userId + "/", category)
+      return axios.put("api/user/" + category.userId + "/category/", category.id)
   },
     // Gets all booksmarks of category
     getBookmarks: category => {
