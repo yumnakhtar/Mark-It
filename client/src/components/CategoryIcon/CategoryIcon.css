@@ -1,3 +1,13 @@
-a {
-    float: left;
+a:hover {
+    text-decoration: none;
+}
+
+img:hover {
+    height: 18px;
+    width: 18px;
+}
+
+img:active {
+    height: 14px;
+    width: 14px;
 }

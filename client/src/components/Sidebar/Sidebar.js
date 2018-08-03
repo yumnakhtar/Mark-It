@@ -11,6 +11,7 @@ class Sidebar extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleKeypress = this.handleKeypress.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
+        this.handleEditFocus = this.handleFocus.bind(this);
         this.state = {
             content_add: "add +",
             width: 100,
@@ -80,7 +81,22 @@ class Sidebar extends Component {
         }, 100);
     }
 
-    handleEdit = id => {
+    handleEditFocus(event) {
+        console.log('handleFocus:', event)
+        // console.log(this.props.currUser)
+        // this.setState({ content_add: "" });
+    }
+
+
+    handleEditClick = id => {
+        console.log('1234')
+        console.log(id)
+        console.log("5678")
+        // this.setState({ content_add: id });
+
+    }
+
+    submitEdit = id => {
         let category = {
             id: id,
             UserUuid: this.props.currUser
@@ -102,20 +118,49 @@ class Sidebar extends Component {
         return (
             <div className="sidenav">
             <h4>Categories</h4>
+            <ul>
                 {this.state.categories.map(category => {
-                    return (<ul key={category.id}>
-                        <a href="#" value={category.id}
+                    return <li key={category.id}>
+                        <a href="#" className="name"
+                            value={category.id}
                             onClick={() => {
-                                return this.props.handleClick(category.id)
+                            return this.props.handleClick(category.id)
                             }}
                         >{category.name}
                         </a>
                         <DeleteBtn
                         onClick={() => this.handleDelete(category.id)}/>
                         <EditBtn 
-                        onClick={() => this.handleEdit(category.id)}/>
-                    </ul>)
+                        onFocus={this.handleEditFocus}
+                        // id="edit"
+                        // type="text"  
+                        // autoComplete="off"
+                        // maxLength="70"
+                        // // style={{ width: this.state.width }}
+                        // value={category.name}
+                        onClick={() => this.handleEditClick(category.id)}
+                        />
+                    </li>
                 })}
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* })} */}
 
                 <input
                     id="add"

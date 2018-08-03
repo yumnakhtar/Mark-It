@@ -16,18 +16,25 @@
     border: transparent;
 }
 
-a, a:hover {
+.name, .name:hover {
     color: white;
 }
 
-a:active {
+.name:active {
     font-weight: bold;
 }
 
 ul {
-    padding: 5px;
+    list-style-type: none;
+    padding: 10px;
 }
 
 h4 {
     padding-top: 10%;
 }
+
+li {
+    display: inline-block;
+}
+
+
