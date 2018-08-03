@@ -22,7 +22,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-light color justify-content-between">
         <a className="navbar-brand"> <img src={logo} alt="logo" height="40px" width="120px" /></a>
-        <button onClick={this.handlelogout.bind(this)}>logout</button>
+        <button id="logout" onClick={this.handlelogout.bind(this)}>logout</button>
       </nav>
 
     )

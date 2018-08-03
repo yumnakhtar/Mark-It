@@ -14,6 +14,7 @@
 #add {
     background-color: transparent;
     border: transparent;
+    cursor: pointer;
 }
 
 .name, .name:hover {
@@ -36,5 +37,3 @@ h4 {
 li {
     display: inline-block;
 }
-
-

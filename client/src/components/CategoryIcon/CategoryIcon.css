@@ -1,13 +1,13 @@
-a:hover {
+.delete:hover, .edit:hover {
     text-decoration: none;
 }
 
-img:hover {
+img.delete-bin:hover, img.edit-pen:hover {
     height: 18px;
     width: 18px;
 }
 
-img:active {
+img.delete-bin:active, img.edit-pen:active {
     height: 14px;
     width: 14px;
 }
