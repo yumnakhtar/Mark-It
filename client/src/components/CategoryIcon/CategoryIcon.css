@@ -1,13 +1,25 @@
-.delete:hover, .edit:hover {
+.delete:hover, input.edit:hover {
     text-decoration: none;
 }
 
-img.delete-bin:hover, img.edit-pen:hover {
-    height: 18px;
-    width: 18px;
+img.delete-bin:hover {
+    transform: translateY(-2px);
 }
 
-img.delete-bin:active, img.edit-pen:active {
+img.delete-bin:active, input.edit:active {
     height: 14px;
     width: 14px;
 }
+
+input.edit:hover {
+    transform: translateY(1px);
+}
+
+.edit {
+    height: 16px;
+    width: 16px;
+    border: 2px;
+    transform: translateY(3px);
+    outline: none;
+}
+
